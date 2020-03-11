@@ -219,48 +219,27 @@ var y = d3.scaleLinear().range([height, 0]);
             .attr("class", "overlay")
             .attr("width", width)
             .attr("height", height)
-            .on("mouseover", function() { focus.style("display", null);  })
-            .on("mouseout", function() { focus.style("display", "none"); unHighlight(); })
+            .on("mouseover", function() { focus.style("display", null); tooltip_div.style("display", null); })
+            .on("mouseout", function() { focus.style("display", "none"); tooltip_div.style("display", "none"); })
             .on("mousemove", mousemove);
 
+        var bisectDate = d3.bisector(function(d) { return d.date; }).left;
+
         function mousemove() {
+
             var x0 = x.invert(d3.mouse(this)[0]),
                 i = bisectDate(data, x0, 1),
                 d0 = data[i - 1],
                 d1 = data[i],
                 d = x0 - d0.date > d1.date - x0 ? d1 : d0;
             focus.attr("transform", "translate(" + x(d.date) + "," + y(d.total_case) + ")");
+            // focus.select("text").html("Ziua " + d.day_no);
             focus.select(".x-hover-line").attr("y2", height - y(d.total_case));
             focus.select(".y-hover-line").attr("x2", -x(d.date));
-
             highlight(d);
         }
 
-        var bisectDate = d3.bisector(function(d) { return d.date; }).left;
-
-        /******************************** Tooltip Inside Div *************************/
-        // http://bl.ocks.org/GerHobbelt/2505393
-
-        function getNodePos(el)
-        {
-            var body = d3.select('body').node();
-
-            for (var lx = 0, ly = 0;
-                    el != null && el != body;
-                    lx += (el.offsetLeft || el.clientLeft), ly += (el.offsetTop || el.clientTop), el = (el.offsetParent || el.parentNode))
-                ;
-            return {x: lx, y: ly};
-        }
-
-        // calculate most of the coordinates for tooltipping just once:
-        var root = d3.select("svg");
-        var scr = { x: window.scrollX, y: window.scrollY, w: window.innerWidth, h: window.innerHeight };
-        var body_sel = d3.select('body');
-        var body = { w: body_sel.node().offsetWidth, h: body_sel.node().offsetHeight };
-        var svgpos = getNodePos(root.node());
-        var dist = { x: 10, y: 10 };
-
-        var tooltip_div = d3.select("#chart")
+        const tooltip_div = d3.select("body")
             .append("tooltip_div")
             .attr("class", "tooltip")
             .style("opacity", 0);
@@ -269,31 +248,9 @@ var y = d3.scaleLinear().range([height, 0]);
             tooltip_div.transition()
                 .duration(200)
                 .style("opacity", .9);
-
-            var m = d3.mouse(root.node());
-            scr.x = window.scrollX;
-            scr.y = window.scrollY;
-            m[0] += svgpos.x;
-            m[1] += svgpos.y;
-            tooltip_div.style("right", "");
-            tooltip_div.style("left", "");
-            tooltip_div.style("bottom", "");
-            tooltip_div.style("top", "");
-
-            if (m[0] > scr.x + scr.w / 2) {
-                tooltip_div.style("right", (body.w - m[0] + dist.x + 65) + "px");
-            } else {
-                tooltip_div.style("left", (m[0] + dist.x) + "px");
-            }
-
-            if (m[1] > scr.y + scr.h / 2) {
-                tooltip_div.style("bottom", (body.h - m[1] + dist.y + 25) + "px");
-            } else {
-                tooltip_div.style("top", (m[1] + dist.y) + "px");
-            }
-            tooltip_div.style("visibility", "visible");
-
-            tooltip_div.html(tooltipHTML(d));
+            tooltip_div.html(tooltipHTML(d))
+                .style("left", (d3.event.pageX/2 + 240) + "px")
+                .style("top", (d3.event.pageY/2 + 90) + "px");
         };
 
         const tooltipHTML = (d) => {
@@ -306,13 +263,9 @@ var y = d3.scaleLinear().range([height, 0]);
                     "Decese noi: " + d.new_dead_no + "<br />" +
                     "Decese total: " + d.total_dead + "<br />";
 
-        };
+    };
 
-        const unHighlight = (d) => {
-            tooltip_div.transition()
-                .duration(500)
-                .style("opacity", 0);
-        }
+        /******************************** Tooltip Code ********************************/
 
     };
 
