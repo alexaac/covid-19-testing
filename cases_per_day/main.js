@@ -109,7 +109,7 @@ var y = d3.scaleLinear().range([height, 0]);
             .attr("text-anchor", "middle")
             .style("font-size", "16px")
             .style("text-decoration", "underline")
-            .text("Cazurile de COVID-19 din România pe zile");
+            .text("Evoluția cazurilor pe zile");
 
         /******************************** Labels ********************************/
         var xLabel = svg.append("text")
@@ -184,13 +184,15 @@ var y = d3.scaleLinear().range([height, 0]);
             : formatYear)(date);
         }
 
-        svg.append("g")
+        const xAxis = svg.append("g")
             .attr("transform", "translate(0," + height + ")")
             .call(d3.axisBottom(x).ticks(5).tickFormat(multiFormat));
+        xAxis.selectAll('text').attr("font-weight", "bold");
 
         // Add the Y Axis
-        svg.append("g")
+        const yAxis = svg.append("g")
             .call(d3.axisLeft(y).ticks(5));
+        yAxis.selectAll('text').attr("font-weight", "bold");
 
         /******************************** Tooltip Code ********************************/
 
