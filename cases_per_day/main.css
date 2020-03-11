@@ -13,7 +13,7 @@ body {
 }
 
 .wrapper {
-    margin: 0 auto;
+    margin: 0 20;
     max-width: 1200px;
 }
 
@@ -61,8 +61,8 @@ path {
 
 tooltip_div.tooltip {
     position: absolute;
-    top: 100px;
-    left: 100px;
+    /* top: 100px;
+    left: 100px; */
     -moz-border-radius: 5px;
     border-radius: 5px;
     background: white;

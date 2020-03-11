@@ -251,8 +251,8 @@ var y = d3.scaleLinear().range([height, 0]);
                 .duration(200)
                 .style("opacity", .9);
             tooltip_div.html(tooltipHTML(d))
-                .style("left", (d3.event.pageX/2 + 240) + "px")
-                .style("top", (d3.event.pageY/2 + 90) + "px");
+                .style("left", (d3.event.pageX/1.5) + "px")
+                .style("top", (d3.event.pageY/1.5) + "px");
         };
 
         const tooltipHTML = (d) => {
