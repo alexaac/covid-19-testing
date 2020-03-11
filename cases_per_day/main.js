@@ -154,9 +154,39 @@ var y = d3.scaleLinear().range([height, 0]);
         });
 
         /******************************** X Axis ********************************/
+        var locale = d3.timeFormatLocale({
+            "dateTime": "%A, %e %B %Y г. %X",
+            "date": "%d.%m.%Y",
+            "time": "%H:%M:%S",
+            "periods": ["AM", "PM"],
+            "days": ["Luni", "Marți", "Miercuri", "Joi", "Vineri", "Sâmbătă", "Duminică"],
+            "shortDays": ["Lu", "Ma", "Mi", "Jo", "Vi", "Sa", "Du"],
+            "months": ["Ianuarie", "Februarie", "Martie", "Aprilie", "Mai", "Iunie", "Iulie", "August", "Septembrie", "Octombrie", "Noiembrie", "Decembrie"],
+            "shortMonths": ["Ian", "Feb", "Mart", "Apr", "Mai", "Iun", "Iul", "Aug", "Sept", "Oct", "Nov", "Dec"]
+        });
+
+        var formatMillisecond = locale.format(".%L"),
+            formatSecond = locale.format(":%S"),
+            formatMinute = locale.format("%I:%M"),
+            formatHour = locale.format("%I %p"),
+            formatDay = locale.format("%a %d"),
+            formatWeek = locale.format("%b %d"),
+            formatMonth = locale.format("%B"),
+            formatYear = locale.format("%Y");
+
+        function multiFormat(date) {
+        return (d3.timeSecond(date) < date ? formatMillisecond
+            : d3.timeMinute(date) < date ? formatSecond
+            : d3.timeHour(date) < date ? formatMinute
+            : d3.timeDay(date) < date ? formatHour
+            : d3.timeMonth(date) < date ? (d3.timeWeek(date) < date ? formatDay : formatWeek)
+            : d3.timeYear(date) < date ? formatMonth
+            : formatYear)(date);
+        }
+
         svg.append("g")
             .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x).ticks(5).tickFormat(d3.timeFormat("%d/%m")));
+            .call(d3.axisBottom(x).ticks(5).tickFormat(multiFormat));
 
         // Add the Y Axis
         svg.append("g")
