@@ -1,4 +1,21 @@
-body { font: 12px Arial;}
+@charset "UTF-8";
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+    font: 12px Arial;
+    margin: 0px;
+    padding: 0px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+}
 
 svg.chart-group {
     width: 100%;
@@ -60,6 +77,23 @@ tooltip_div.tooltip {
     /* font-weight: lighter; */
     visibility: visible;
     pointer-events: none;
-    width: 120px;
-    height: 110px;
+    /* width: 120px;
+    height: 110px; */
+}
+
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 550px) {
+    .wrapper {
+        width: 97%;
+        max-width: 767px;
+    }
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 850px) {
+    .wrapper {
+        width: 97%;
+        max-width: 1200px;
+        float: none;
+    }
 }
