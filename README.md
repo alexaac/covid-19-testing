@@ -1,4 +1,4 @@
-# COVID-19 maps and charts
+# COVID-19 maps and charts for Romania
 
 [Cases per day in Romania](https://alexaac.github.io/covid-19-ro/cases_relations)
 
