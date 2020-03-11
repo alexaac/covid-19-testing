@@ -1,26 +1,26 @@
 // https://bl.ocks.org/d3noob/a44d21b304b9f7260a284b1883232002/1b3a420bb9f51c00003974fda2497625380c7cb9
 
 // set the dimensions and margins of the graph
-var margin = {top: 50, right: 50, bottom: 50, left: 100},
+const margin = {top: 50, right: 50, bottom: 50, left: 100},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom,
     svg_width = width + margin.left + margin.right,
     svg_height = height + margin.top + margin.bottom;
 
 // set the ranges
-var x = d3.scaleTime().range([0, width]);
-var y = d3.scaleLinear().range([height, 0]);
+const x = d3.scaleTime().range([0, width]);
+const y = d3.scaleLinear().range([height, 0]);
 
 (() => {
 
     // define the line
-    var valueline_total = d3.line()
+    const valueline_total = d3.line()
         .x(function(d) { return x(d.date); })
         .y(function(d) { return y(d.total_case); });
-    var valueline_healed = d3.line()
+    const valueline_healed = d3.line()
         .x(function(d) { return d.total_healed !== 0 ? x(d.date) : null; })
         .y(function(d) { return y(d.total_healed); });
-    var valueline_dead = d3.line()
+    const valueline_dead = d3.line()
         .x(function(d) { return d.total_dead !== 0 ? x(d.date) : null; })
         .y(function(d) { return y(d.total_dead); });
 
@@ -48,7 +48,7 @@ var y = d3.scaleLinear().range([height, 0]);
         const cases_data = data[0].data;
 
         // parse the date / time
-        var parseTime = d3.timeParse("%Y-%m-%d");
+        const parseTime = d3.timeParse("%Y-%m-%d");
 
         // format the data
         cases_data.forEach(function(d) {
@@ -112,13 +112,13 @@ var y = d3.scaleLinear().range([height, 0]);
             .text("Evoluția cazurilor pe zile");
 
         /******************************** Labels ********************************/
-        var xLabel = svg.append("text")
+        const xLabel = svg.append("text")
             .attr("y", height + 50)
             .attr("x", width / 2)
             .attr("font-size", "18px")
             .attr("text-anchor", "middle")
             .text("Perioadă de timp");
-        var yLabel = svg.append("text")
+        const yLabel = svg.append("text")
             .attr("transform", "rotate(-90)")
             .attr("y", -30)
             .attr("x", -170)
@@ -127,17 +127,17 @@ var y = d3.scaleLinear().range([height, 0]);
             .text("Număr de persoane");
 
         /******************************** Legend ********************************/
-        var statuses = [
+        const statuses = [
             { status: "total", color: "steelblue", label: "Cazuri confirmate"},
             { status: "healed", color: "limegreen", label: "Recuperări" },
             { status: "dead", color: "red", label: "Decese" }
         ];
 
-        var legend = svg.append("g")
+        const legend = svg.append("g")
             .attr("transform", "translate(130,0)");
 
         statuses.forEach(function(elem, i){
-            var legendRow = legend.append("g")
+            const legendRow = legend.append("g")
                 .attr("transform", "translate(0, " + (i * 20) + ")");
 
             legendRow.append("rect")
@@ -154,7 +154,7 @@ var y = d3.scaleLinear().range([height, 0]);
         });
 
         /******************************** X Axis ********************************/
-        var locale = d3.timeFormatLocale({
+        const locale = d3.timeFormatLocale({
             "dateTime": "%A, %e %B %Y г. %X",
             "date": "%d.%m.%Y",
             "time": "%H:%M:%S",
@@ -165,7 +165,7 @@ var y = d3.scaleLinear().range([height, 0]);
             "shortMonths": ["Ian", "Feb", "Mart", "Apr", "Mai", "Iun", "Iul", "Aug", "Sept", "Oct", "Nov", "Dec"]
         });
 
-        var formatMillisecond = locale.format(".%L"),
+        const formatMillisecond = locale.format(".%L"),
             formatSecond = locale.format(":%S"),
             formatMinute = locale.format("%I:%M"),
             formatHour = locale.format("%I %p"),
@@ -196,7 +196,7 @@ var y = d3.scaleLinear().range([height, 0]);
 
         /******************************** Tooltip Code ********************************/
 
-        var focus = svg.append("g")
+        const focus = svg.append("g")
             .attr("class", "focus")
             .style("display", "none");
 
@@ -225,11 +225,11 @@ var y = d3.scaleLinear().range([height, 0]);
             .on("mouseout", function() { focus.style("display", "none"); tooltip_div.style("display", "none"); })
             .on("mousemove", mousemove);
 
-        var bisectDate = d3.bisector(function(d) { return d.date; }).left;
+        const bisectDate = d3.bisector(function(d) { return d.date; }).left;
 
         function mousemove() {
 
-            var x0 = x.invert(d3.mouse(this)[0]),
+            const x0 = x.invert(d3.mouse(this)[0]),
                 i = bisectDate(data, x0, 1),
                 d0 = data[i - 1],
                 d1 = data[i],
