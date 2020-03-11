@@ -39,16 +39,6 @@ var y = d3.scaleLinear().range([height, 0]);
             .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-    d3.json("http://unpkg.com/d3-time-format@2/locale/ru-RU.json", function(error, locale) {
-        if (error) throw error;
-
-        d3.timeFormatDefaultLocale(locale);
-
-        var format = d3.timeFormat("%c");
-
-        console.log(format(new Date)); // понедельник,  5 декабря 2016 г. 10:31:59
-    });
-
     // Get the data
     const promises = [
         d3.json("statistici_pe_zile.json")
@@ -199,8 +189,8 @@ var y = d3.scaleLinear().range([height, 0]);
             .attr("class", "overlay")
             .attr("width", width)
             .attr("height", height)
-            .on("mouseover", function() { focus.style("display", null); })
-            .on("mouseout", function() { focus.style("display", "none"); })
+            .on("mouseover", function() { focus.style("display", null); tooltip_div.style("display", null); })
+            .on("mouseout", function() { focus.style("display", "none"); tooltip_div.style("display", "none"); })
             .on("mousemove", mousemove);
 
         var bisectDate = d3.bisector(function(d) { return d.date; }).left;
@@ -213,14 +203,29 @@ var y = d3.scaleLinear().range([height, 0]);
                 d1 = data[i],
                 d = x0 - d0.date > d1.date - x0 ? d1 : d0;
             focus.attr("transform", "translate(" + x(d.date) + "," + y(d.total_case) + ")");
-            focus.select("text").html("Ziua " + d.day_no);
+            // focus.select("text").html("Ziua " + d.day_no);
             focus.select(".x-hover-line").attr("y2", height - y(d.total_case));
             focus.select(".y-hover-line").attr("x2", -x(d.date));
-            tooltipHTML(d);
+            highlight(d);
         }
 
+        const tooltip_div = d3.select("body")
+            .append("tooltip_div")
+            .attr("class", "tooltip")
+            .style("opacity", 0);
+
+        const highlight = (d) => {
+            tooltip_div.transition()
+                .duration(200)
+                .style("opacity", .9);
+            tooltip_div.html(tooltipHTML(d))
+                .style("left", (d3.event.pageX) + "px")
+                .style("top", (d3.event.pageY - 28) + "px");
+        };
+
         const tooltipHTML = (d) => {
-            return "<b>Ziua " + d.day_no + "</b><br />" +
+            const ro_date = d3.timeFormat("%Y-%m-%d")(d.date);
+            return "<b>Ziua " + d.day_no + " (" + ro_date + ")</b><br />" +
                     "Cazuri confirmate noi: " + d.new_case_no + "<br />" +
                     "Cazuri confirmate total: " + d.total_case + "<br />" +
                     "Recuperări noi: " + d.new_healed_no + "<br />" +
@@ -228,7 +233,7 @@ var y = d3.scaleLinear().range([height, 0]);
                     "Decese noi: " + d.new_dead_no + "<br />" +
                     "Decese total: " + d.total_dead + "<br />";
 
-        };
+    };
 
         /******************************** Tooltip Code ********************************/
 
