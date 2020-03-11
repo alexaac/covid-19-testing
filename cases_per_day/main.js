@@ -124,7 +124,7 @@ var y = d3.scaleLinear().range([height, 0]);
             .attr("x", -170)
             .attr("font-size", "18px")
             .attr("text-anchor", "middle")
-            .text("Cazuri confirmate");
+            .text("Număr de persoane");
 
         /******************************** Legend ********************************/
         var statuses = [
