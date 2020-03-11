@@ -1,0 +1,748 @@
+{
+	"nodes": [{
+			"name": 1,
+			"properties": {
+				"case_no": 1,
+				"source_no": null,
+				"status": "Vindecat",
+				"diagnostic_date": "26-02-2020",
+				"healing_date": "01-03-2020",
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 25,
+				"county": "GORJ",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 2,
+			"properties": {
+				"case_no": 2,
+				"source_no": null,
+				"status": "Vindecat",
+				"diagnostic_date": "28-02-2020",
+				"healing_date": "05-03-2020",
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 38,
+				"county": "TIMIŞ",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 3,
+			"properties": {
+				"case_no": 3,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "28-02-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 45,
+				"county": "MARAMUREŞ",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 4,
+			"properties": {
+				"case_no": 4,
+				"source_no": 2,
+				"status": "Vindecat",
+				"diagnostic_date": "03-03-2020",
+				"healing_date": "05-03-2020",
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 47,
+				"county": "TIMIŞ",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 5,
+			"properties": {
+				"case_no": 5,
+				"source_no": 4,
+				"status": "Vindecat",
+				"diagnostic_date": "04-03-2020",
+				"healing_date": "07-03-2020",
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 16,
+				"county": "TIMIŞ",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 6,
+			"properties": {
+				"case_no": 6,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "04-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 71,
+				"county": "SUCEAVA",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 7,
+			"properties": {
+				"case_no": 7,
+				"source_no": 5,
+				"status": "Confirmat",
+				"diagnostic_date": "05-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": null,
+				"county": "TIMIŞ",
+				"uat": null,
+				"reference": "",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 8,
+			"properties": {
+				"case_no": 8,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "06-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 51,
+				"county": "OLT",
+				"uat": null,
+				"reference": "",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 9,
+			"properties": {
+				"case_no": 9,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "06-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 40,
+				"county": "HUNEDOARA",
+				"uat": null,
+				"reference": "http://stiri.tvr.ro/al-noualea-caz-de-coronavirus--confirmat-in-hunedoara--pacientul-este-un-barbat-care-s-a-intors-din-bergamo_857275.html#view",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 10,
+			"properties": {
+				"case_no": 10,
+				"source_no": 9,
+				"status": "Confirmat",
+				"diagnostic_date": "07-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 16,
+				"county": "HUNEDOARA",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-esential-23706416-alte-doua-cazuri-coronavirus-confirmate-romania-bilantul-ajunge-11.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 11,
+			"properties": {
+				"case_no": 11,
+				"source_no": 5,
+				"status": "Vindecat",
+				"diagnostic_date": "07-03-2020",
+				"healing_date": "09-03-2020",
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 15,
+				"county": "TIMIŞ",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-esential-23706416-alte-doua-cazuri-coronavirus-confirmate-romania-bilantul-ajunge-11.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 12,
+			"properties": {
+				"case_no": 12,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "07-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 49,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-esential-23706648-primul-caz-coronavirus-confirmat-bucuresti-este-12-lea-nivel-national.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 13,
+			"properties": {
+				"case_no": 13,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "07-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 72,
+				"county": "GALAŢI",
+				"uat": null,
+				"reference": "https://www.rfi.ro/social-118945-coronavirus-13-cazuri-au-fost-confirmate-romania-dintre-care-unul-bucuresti",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 14,
+			"properties": {
+				"case_no": 14,
+				"source_no": 12,
+				"status": "Confirmat",
+				"diagnostic_date": "08-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 42,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.g4media.ro/breaking-al-14-lea-caz-de-coronavirus-confirmat-in-romania-o-femeie-de-42-de-ani-din-bucuresti-o-apropiata-a-barbatului-confirmat-ieri.html",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 15,
+			"properties": {
+				"case_no": 15,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "08-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 70,
+				"county": "MUREŞ",
+				"uat": null,
+				"reference": "https://www.g4media.ro/breaking-caz-nou-de-coronavirus-in-romania-al-15-lea-o-femeie-de-70-de-ani-din-judetul-mures.html",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 16,
+			"properties": {
+				"case_no": 16,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "09-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 73,
+				"county": "BUZĂU",
+				"uat": null,
+				"reference": "https://www.digi24.ro/stiri/actualitate/romania-are-17-cazuri-de-coronavirus-doua-noi-cazuri-confirmate-luni-1272760",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 17,
+			"properties": {
+				"case_no": 17,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "09-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 60,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.digi24.ro/stiri/actualitate/romania-are-17-cazuri-de-coronavirus-doua-noi-cazuri-confirmate-luni-1272760",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 18,
+			"properties": {
+				"case_no": 18,
+				"source_no": 17,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 32,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 19,
+			"properties": {
+				"case_no": 19,
+				"source_no": 17,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 3,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 20,
+			"properties": {
+				"case_no": 20,
+				"source_no": 17,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 30,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 21,
+			"properties": {
+				"case_no": 21,
+				"source_no": 12,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 31,
+				"county": "ILFOV",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 22,
+			"properties": {
+				"case_no": 22,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 36,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 23,
+			"properties": {
+				"case_no": 23,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 35,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 24,
+			"properties": {
+				"case_no": 24,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 34,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 25,
+			"properties": {
+				"case_no": 25,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 41,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 26,
+			"properties": {
+				"case_no": 26,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 57,
+				"county": "ARAD",
+				"uat": null,
+				"reference": "https://adevarul.ro/news/eveniment/trei-cazuri-coronavirus-romania-bilantul-infectatilor-aajuns-28-persoane-1_5e67d6285163ec4271da3727/index.html",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 27,
+			"properties": {
+				"case_no": 27,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 26,
+				"county": "HUNEDOARA",
+				"uat": null,
+				"reference": "https://adevarul.ro/news/eveniment/trei-cazuri-coronavirus-romania-bilantul-infectatilor-aajuns-28-persoane-1_5e67d6285163ec4271da3727/index.html",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 28,
+			"properties": {
+				"case_no": 28,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 37,
+				"county": "CARAŞ-SEVERIN",
+				"uat": null,
+				"reference": "https://adevarul.ro/news/eveniment/trei-cazuri-coronavirus-romania-bilantul-infectatilor-aajuns-28-persoane-1_5e67d6285163ec4271da3727/index.html",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 29,
+			"properties": {
+				"case_no": 29,
+				"source_no": 17,
+				"status": "Confirmat",
+				"diagnostic_date": "10-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 47,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.g4media.ro/breaking-al-29-lea-caz-de-coronavirus-confirmat-in-bucuresti-o-femeie-de-47-de-ani.html",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 30,
+			"properties": {
+				"case_no": 30,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "11-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 43,
+				"county": "MUNICIPIUL BUCUREŞTI",
+				"uat": null,
+				"reference": "https://www.digi24.ro/stiri/actualitate/30-de-cazuri-confirmate-de-coronavirus-in-romania-1273533",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		},
+		{
+			"name": 31,
+			"properties": {
+				"case_no": 31,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "11-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 42,
+				"county": "IAŞI",
+				"uat": null,
+				"reference": "https://www.digi24.ro/stiri/actualitate/30-de-cazuri-confirmate-de-coronavirus-in-romania-1273533",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": null
+			}
+		}
+	],
+	"links": [{
+			"source": 1,
+			"target": 1
+		},
+		{
+			"source": 2,
+			"target": 2
+		},
+		{
+			"source": 2,
+			"target": 4
+		},
+		{
+			"source": 3,
+			"target": 3
+		},
+		{
+			"source": 4,
+			"target": 5
+		},
+		{
+			"source": 5,
+			"target": 7
+		},
+		{
+			"source": 5,
+			"target": 11
+		},
+		{
+			"source": 6,
+			"target": 6
+		},
+		{
+			"source": 8,
+			"target": 8
+		},
+		{
+			"source": 9,
+			"target": 9
+		},
+		{
+			"source": 9,
+			"target": 10
+		},
+		{
+			"source": 12,
+			"target": 12
+		},
+		{
+			"source": 12,
+			"target": 14
+		},
+		{
+			"source": 12,
+			"target": 21
+		},
+		{
+			"source": 13,
+			"target": 13
+		},
+		{
+			"source": 15,
+			"target": 15
+		},
+		{
+			"source": 16,
+			"target": 16
+		},
+		{
+			"source": 17,
+			"target": 17
+		},
+		{
+			"source": 17,
+			"target": 18
+		},
+		{
+			"source": 17,
+			"target": 19
+		},
+		{
+			"source": 17,
+			"target": 20
+		},
+		{
+			"source": 17,
+			"target": 29
+		},
+		{
+			"source": 22,
+			"target": 22
+		},
+		{
+			"source": 23,
+			"target": 23
+		},
+		{
+			"source": 24,
+			"target": 24
+		},
+		{
+			"source": 25,
+			"target": 25
+		},
+		{
+			"source": 26,
+			"target": 26
+		},
+		{
+			"source": 27,
+			"target": 27
+		},
+		{
+			"source": 28,
+			"target": 28
+		},
+		{
+			"source": 30,
+			"target": 30
+		},
+		{
+			"source": 31,
+			"target": 31
+		}
+	]
+}
