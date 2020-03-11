@@ -1,0 +1,43 @@
+body { font: 12px Arial;}
+
+svg.chart-group {
+    width: 100%;
+    max-width: 900px;
+}
+
+path { 
+    stroke: steelblue;
+    stroke-width: 2;
+    fill: none;
+}
+
+.axis path, line {
+    fill: none;
+    stroke: grey;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+}
+
+.line_healed {
+    stroke:limegreen;
+}
+.line_dead {
+    stroke: red;
+}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.focus circle {
+    fill: #F1F3F3;
+    stroke: #777;
+    stroke-width: 3px;
+}
+
+.hover-line {
+    stroke: #777;
+    stroke-width: 2px;
+    stroke-dasharray: 3,3;
+}
