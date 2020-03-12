@@ -15,16 +15,9 @@ const graph = { nodes: [], links: [] };
     // Get nodes from links
     d3.json("relatii_cazuri.json").then(function(data) {
     
-        data.nodes.forEach(function(d) {
+        graph.nodes = data.nodes;
+        graph.links = data.links;
 
-            graph.links.push({
-                "source": d.properties.source_no || d.properties.case_no,
-                "target": d.properties.case_no,
-                "properties": d.properties, 
-                "type": (d.properties.country_of_infection != null  && d.properties.country_of_infection != "România") ? d.properties.country_of_infection : 'local'
-            });
-        });
-    
         changeView();
     });
 
@@ -76,17 +69,11 @@ const graph = { nodes: [], links: [] };
                 "translate(" + margin.left + "," + margin.top + ")");
 
     const changeView = () => {
-        
-        // Compute the distinct nodes from the links.
-        graph.links.forEach(function(link) {
-            link.source = graph.nodes[link.source] || (graph.nodes[link.source] = {name: link.source, properties: link.properties});
-            link.target = graph.nodes[link.target] || (graph.nodes[link.target] = {name: link.target, properties: link.properties});
-        });
 
-        const types = Array.from(new Set(graph.links.map(d => d.type)));
+        const types = Array.from(new Set(graph.nodes.map(d => d.source)));
         const color = d3.scaleOrdinal(types, d3.schemePaired);
 
-        graph.nodes.shift();
+        // graph.nodes.shift();
         const links = graph.links;
         const nodes = graph.nodes;
 
@@ -118,7 +105,7 @@ const graph = { nodes: [], links: [] };
         
         const link = svg.append("g")
                 .attr("fill", "none")
-                .attr("stroke-width", 1.2)
+                .attr("stroke-width", 1.5)
                 .selectAll("path")
                 .data(links)
                 .join("path")
@@ -162,7 +149,7 @@ const graph = { nodes: [], links: [] };
             .attr("stroke", "white")
             .attr("stroke-width", 1.5)
             .attr("r", 8)
-            .attr("fill", function(d) { return d.parent ? color(d.parent.properties.county) : color(d.properties.county); })
+            .attr("fill", function(d) {return d.parent ? color(d.parent.properties.county) : color(d.properties.county); })
             .attr("stroke", function(d) { return d.properties.status === 2 ? 'green' : '#333'; })
             .on("mouseover", d => highlight(d));
             
