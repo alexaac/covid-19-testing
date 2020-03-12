@@ -28,8 +28,8 @@ text {
 
 tooltip_div.tooltip {
     position: absolute;
-    top: 100px;
-    left: 100px;
+    /* top: 100px;
+    left: 100px; */
     -moz-border-radius: 5px;
     border-radius: 5px;
     background: white;
@@ -39,8 +39,8 @@ tooltip_div.tooltip {
     padding: 10px;
     min-width: 16.75vmin;
     font-size: 0.7em;
-    line-height: 24pt;
+    line-height: 12pt;
     font-family:  "EB Garamond", serif;
-    font-weight: lighter;
+    /* font-weight: lighter; */
     visibility: visible;
 }

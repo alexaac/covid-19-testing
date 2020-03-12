@@ -11,7 +11,7 @@ const width = 960, height = 500;
     
         data = data.data;
         data.forEach(function(d) {
-    console.log(d);
+
             dummy.push({
                 "source": d.properties.source_no || d.properties.case_no,
                 "target": d.properties.case_no,
@@ -30,19 +30,13 @@ const width = 960, height = 500;
         .attr("class", "tooltip")       
         .style("opacity", 0);
 
-    const unHighlight = () => {
-        tooltip_div.transition()    
-            .duration(200)    
-            .style("opacity", 0);
-    }
-
     const highlight = (d) => {
         tooltip_div.transition()    
             .duration(200)    
             .style("opacity", .9);    
         tooltip_div.html(tooltipHTML(d))
-            .style("left", (d3.event.pageX) + "px")
-            .style("top", (d3.event.pageY - 28) + "px");
+            .style("left", (d3.event.pageX/1.5) + "px")
+            .style("top", (d3.event.pageY/1.5) + "px");
         d3.selectAll(".CO-" + d.properties.case_no)
             .attr("style", "stroke: #00ffff; stroke-Config.viewport_width: 2px; fill-opacity: 0.8; cursor: pointer;");
     };
@@ -58,6 +52,12 @@ const width = 960, height = 500;
         (d.properties.reference !== null && d.properties.reference !== "" ? ("Detalii: " + '<a href="' + d.properties.reference + '" target= "_blank">aici</a>') : "");
     };
 
+    const unHighlight = () => {
+        tooltip_div.transition()
+            .duration(200)
+            .style("opacity", 0);
+    };
+
     const svg = d3.select("body").append("svg")
         .attr("class", "chart-group")
         .attr("preserveAspectRatio", "xMidYMid")
@@ -67,11 +67,8 @@ const width = 960, height = 500;
         .style("font", "12px sans-serif")
         .on("click", () => { unHighlight(); });
 
-        
     function update() {
         
-        console.log(graph);
-
         graph.links = dummy;
         // Compute the distinct nodes from the links.
         graph.links.forEach(function(link) {
@@ -81,15 +78,11 @@ const width = 960, height = 500;
 
 
         const types = Array.from(new Set(graph.links.map(d => d.type)));
-        const color = d3.scaleOrdinal(types, d3.schemeCategory10);
+        const color = d3.scaleOrdinal(d3.schemePaired);
 
         graph.nodes.shift();
-        console.log(graph);
         const links = graph.links;
         const nodes = graph.nodes;
-
-        console.log(links);
-        console.log(nodes);
 
         const simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.name))
@@ -158,7 +151,7 @@ const width = 960, height = 500;
         node.append("circle")
             .attr("stroke", "white")
             .attr("stroke-width", 1.5)
-            .attr("r", 6)
+            .attr("r", 8)
             .attr("fill", function(d) { return d.parent ? color(d.parent.properties.county) : color(d.properties.county); })
             .attr("stroke", function(d) { return d.properties.status === 2 ? 'green' : '#333'; })
             .on("click", d => highlight(d)) 
