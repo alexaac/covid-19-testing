@@ -36,8 +36,8 @@ const y = d3.scaleLinear().range([height, 0]);
         .attr("height", svg_height)       
         .attr('viewBox', '0 0 ' + svg_width + ' ' + svg_height)
             .append("g")
-            .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+                .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
 
     // Get the data
     const promises = [

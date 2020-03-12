@@ -26,6 +26,7 @@ body {
 svg.chart-group {
     width: 100%;
     max-width: 900px;
+    font: 12px sans-serif;
 }
 
 path { 
@@ -70,8 +71,6 @@ path {
 
 tooltip_div.tooltip {
     position: absolute;
-    /* top: 100px;
-    left: 100px; */
     -moz-border-radius: 5px;
     border-radius: 5px;
     background: white;
@@ -83,11 +82,8 @@ tooltip_div.tooltip {
     font-size: 0.7em;
     line-height: 12pt;
     font-family:  "EB Garamond", serif;
-    /* font-weight: lighter; */
     visibility: visible;
     pointer-events: none;
-    /* width: 120px;
-    height: 110px; */
 }
 
 /* Small devices (tablets, 768px and up) */

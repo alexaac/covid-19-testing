@@ -7,7 +7,7 @@ const margin = {top: 50, right: 50, bottom: 50, left: 100},
     svg_width = width + margin.left + margin.right,
     svg_height = height + margin.top + margin.bottom;
 
-const graph = { nodes: [], links: [] }, dummy = [], foreign_sources = [];
+const graph = { nodes: [], links: [] };
 
 // Get the data
 (() => {
@@ -16,6 +16,8 @@ const graph = { nodes: [], links: [] }, dummy = [], foreign_sources = [];
     d3.json("relatii_cazuri.json").then(function(data) {
     
         data = data.nodes;
+        const dummy = [];
+
         data.forEach(function(d) {
 
             dummy.push({
@@ -26,7 +28,8 @@ const graph = { nodes: [], links: [] }, dummy = [], foreign_sources = [];
             });
         });
     
-        update();
+        graph.links = dummy;
+        changeView();
     });
 
     // use a tooltip to show info per county, simultaneous in all charts
@@ -73,15 +76,13 @@ const graph = { nodes: [], links: [] }, dummy = [], foreign_sources = [];
         .attr("width", svg_width)
         .attr("height", svg_height)
         .attr("viewBox", '0, 0 ' + svg_width + ' ' + svg_height)
-        .style("font", "12px sans-serif")
         .on("click", () => { unHighlight(); })
-        .append("g")
-            .attr("transform",
-            "translate(" + margin.left + "," + margin.top + ")");
+            .append("g")
+                .attr("transform",
+                "translate(" + margin.left + "," + margin.top + ")");
 
-    function update() {
+    const changeView = () => {
         
-        graph.links = dummy;
         // Compute the distinct nodes from the links.
         graph.links.forEach(function(link) {
             link.source = graph.nodes[link.source] || (graph.nodes[link.source] = {name: link.source, properties: link.properties});
@@ -104,7 +105,7 @@ const graph = { nodes: [], links: [] }, dummy = [], foreign_sources = [];
             }))
             .force("x", d3.forceX())
             .force("y", d3.forceY());
-            
+
         // Per-type markers, as they don't inherit styles.
         svg.append("defs").selectAll("marker")
         .data(types)
