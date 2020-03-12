@@ -1,12 +1,18 @@
 // https://gist.github.com/mbostock/1153292
 
+// set the dimensions and margins of the graph
+const margin = {top: 50, right: 50, bottom: 50, left: 100},
+    width = 960 - margin.left - margin.right,
+    height = 500 - margin.top - margin.bottom,
+    svg_width = width + margin.left + margin.right,
+    svg_height = height + margin.top + margin.bottom;
+
 const graph = { nodes: [], links: [] }, dummy = [], foreign_sources = [];
 
-const width = 960, height = 600;
-
-
+// Get the data
 (() => {
     
+    // Get nodes from links
     d3.json("relatii_cazuri.json").then(function(data) {
     
         data = data.nodes;
@@ -56,14 +62,22 @@ const width = 960, height = 600;
             .style("opacity", 0);
     };
 
-    const svg = d3.select("#chart").append("svg")
+    // append the svg object to the chart div
+    // appends a 'group' element to 'svg'
+    // moves the 'group' element to the top left margin
+
+    const svg = d3.select("#chart")
+        .append("svg")
         .attr("class", "chart-group")
         .attr("preserveAspectRatio", "xMidYMid")
-        .attr("width", width)
-        .attr("height", height)
-        .attr("viewBox", [0, 0, width, height])
+        .attr("width", svg_width)
+        .attr("height", svg_height)
+        .attr("viewBox", '0, 0 ' + svg_width + ' ' + svg_height)
         .style("font", "12px sans-serif")
-        .on("click", () => { unHighlight(); });
+        .on("click", () => { unHighlight(); })
+        .append("g")
+            .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
 
     function update() {
         

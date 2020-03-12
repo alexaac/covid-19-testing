@@ -1,4 +1,6 @@
-{"data":[{"day_case":"2020-02-26","day_no":1,"new_case_no":1,"total_case":1,"new_healed_no":0,"total_healed":0,"new_dead_no":0,"total_dead":0}, 
+{"data":[
+    {"day_case":"2020-02-25","day_no":0,"new_case_no":0,"total_case":0,"new_healed_no":0,"total_healed":0,"new_dead_no":0,"total_dead":0}, 
+    {"day_case":"2020-02-26","day_no":1,"new_case_no":1,"total_case":1,"new_healed_no":0,"total_healed":0,"new_dead_no":0,"total_dead":0}, 
     {"day_case":"2020-02-27","day_no":2,"new_case_no":0,"total_case":1,"new_healed_no":0,"total_healed":0,"new_dead_no":0,"total_dead":0}, 
     {"day_case":"2020-02-28","day_no":3,"new_case_no":2,"total_case":3,"new_healed_no":0,"total_healed":0,"new_dead_no":0,"total_dead":0}, 
     {"day_case":"2020-02-29","day_no":4,"new_case_no":0,"total_case":3,"new_healed_no":0,"total_healed":0,"new_dead_no":0,"total_dead":0}, 

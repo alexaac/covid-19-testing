@@ -56,7 +56,7 @@ const y = d3.scaleLinear().range([height, 0]);
             d.date.toLocaleDateString('ro-RO');
             d.total_case = +d.total_case;
         });
-
+console.log(cases_data);
         changeView(cases_data);
     }).catch( 
         error => console.log(error)
