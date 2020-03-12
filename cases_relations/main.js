@@ -16,7 +16,7 @@ const width = 960, height = 600;
                 "source": d.properties.source_no || d.properties.case_no,
                 "target": d.properties.case_no,
                 "properties": d.properties, 
-                "type": (d.properties.country_of_infection != null && d.properties.country_of_infection != "" && d.properties.country_of_infection != "România") ? d.properties.country_of_infection : 'local'
+                "type": (d.properties.country_of_infection != null  && d.properties.country_of_infection != "România") ? d.properties.country_of_infection : 'local'
             });
         });
     
@@ -42,7 +42,7 @@ const width = 960, height = 600;
 
     const tooltipHTML = (d) => {
         return "<b>Cazul " + d.properties.case_no + "</b><br />" +
-        (d.properties.gender === 'M' ? "Bărbat, " : "Femeie, ") +
+        (d.properties.gender === 'Bărbat' ? "Bărbat, " : "Femeie, ") +
         (d.properties.age != null ? d.properties.age + "," : "") +
         ( d.properties.county_code === "B" ? " din București" : (" din  " + 
         d.properties.county)) + ".<br />" +
@@ -162,7 +162,7 @@ const width = 960, height = 600;
         node.append("text")
                 .attr("x", 8)
                 .attr("y", "0.31em")
-                .text(d => { return "#" + d.name + ((d.properties.country_of_infection != null && d.properties.country_of_infection != "" && d.properties.country_of_infection != "România") ? (" <- " + d.properties.country_of_infection) : ""); })
+                .text(d => { return "#" + d.name + ((d.properties.country_of_infection != null  && d.properties.country_of_infection != "România") ? (" <- " + d.properties.country_of_infection) : ""); })
                 .clone(true).lower()
                 .attr("fill", "none")
                 .attr("stroke", "white")

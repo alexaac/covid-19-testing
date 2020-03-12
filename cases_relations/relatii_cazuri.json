@@ -15,8 +15,8 @@
 				"reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
-				"country_of_infection": ""
+				"other_info": null,
+				"country_of_infection": null
 			}
 		},
 		{
@@ -35,7 +35,7 @@
 				"reference": "https://www.digi24.ro/stiri/actualitate/romania-are-17-cazuri-de-coronavirus-doua-noi-cazuri-confirmate-luni-1272760",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "Italia"
 			}
 		},
@@ -115,7 +115,7 @@
 				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
 				"healed_reference": null,
 				"symptoms": "Da",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "România"
 			}
 		},
@@ -135,7 +135,7 @@
 				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "România"
 			}
 		},
@@ -155,7 +155,7 @@
 				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "Israel"
 			}
 		},
@@ -175,7 +175,7 @@
 				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "Israel"
 			}
 		},
@@ -195,7 +195,7 @@
 				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "UK"
 			}
 		},
@@ -215,7 +215,7 @@
 				"reference": "https://www.hotnews.ro/stiri-esential-23715829-coronavirus-romania-alte-3-noi-cazuri-coronavirus-bilantul-imbolnavirilor-ajunge-35.htm?fbclid=IwAR1WSWcqatpCZCVbVYirvlpltyCDHpXlx6gDF31UPBaoZFas6r-EvtpdEpE",
 				"healed_reference": null,
 				"symptoms": "Da",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "România"
 			}
 		},
@@ -295,7 +295,7 @@
 				"reference": "https://www.g4media.ro/primul-caz-de-infectie-cu-coronavirus-la-constanta-barbatul-nu-a-calatorit-in-strainatate-si-nu-stie-sa-fi-fost-in-contact-cu-o-persoana-bolnava.html",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "România"
 			}
 		},
@@ -415,8 +415,8 @@
 				"reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
-				"country_of_infection": ""
+				"other_info": null,
+				"country_of_infection": null
 			}
 		},
 		{
@@ -455,7 +455,7 @@
 				"reference": "https://www.hotnews.ro/stiri-sanatate-23704639-8-lea-caz-infectie-coronavirus-confirmat-romania-femeie-51-ani-din-olt-care-intors-din-italia.htm",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "Italia"
 			}
 		},
@@ -476,7 +476,7 @@
 				"healed_reference": null,
 				"symptoms": "Nu",
 				"other_info": "Cazul avion Bergamo",
-				"country_of_infection": ""
+				"country_of_infection": null
 			}
 		},
 		{
@@ -535,7 +535,7 @@
 				"reference": "https://www.hotnews.ro/stiri-politic-23716375-38-lea-caz-coronavirus-confirmat-romania.htm",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "România"
 			}
 		},
@@ -560,86 +560,6 @@
 			}
 		},
 		{
-			"name": 12,
-			"properties": {
-				"case_no": 12,
-				"source_no": null,
-				"status": "Confirmat",
-				"diagnostic_date": "07-03-2020",
-				"healing_date": null,
-				"death_date": null,
-				"gender": "Bărbat",
-				"age": 49,
-				"county": "BUCUREȘTI",
-				"uat": "BUCUREȘTI",
-				"reference": "https://www.hotnews.ro/stiri-esential-23706648-primul-caz-coronavirus-confirmat-bucuresti-este-12-lea-nivel-national.htm",
-				"healed_reference": null,
-				"symptoms": "Nu",
-				"other_info": "",
-				"country_of_infection": "Italia"
-			}
-		},
-		{
-			"name": 13,
-			"properties": {
-				"case_no": 13,
-				"source_no": null,
-				"status": "Confirmat",
-				"diagnostic_date": "07-03-2020",
-				"healing_date": null,
-				"death_date": null,
-				"gender": "Bărbat",
-				"age": 72,
-				"county": "GALAȚI",
-				"uat": null,
-				"reference": "https://www.rfi.ro/social-118945-coronavirus-13-cazuri-au-fost-confirmate-romania-dintre-care-unul-bucuresti",
-				"healed_reference": null,
-				"symptoms": "Nu",
-				"other_info": "",
-				"country_of_infection": "Italia"
-			}
-		},
-		{
-			"name": 14,
-			"properties": {
-				"case_no": 14,
-				"source_no": 12,
-				"status": "Confirmat",
-				"diagnostic_date": "08-03-2020",
-				"healing_date": null,
-				"death_date": null,
-				"gender": "Femeie",
-				"age": 42,
-				"county": "BUCUREȘTI",
-				"uat": "BUCUREȘTI",
-				"reference": "https://www.g4media.ro/breaking-al-14-lea-caz-de-coronavirus-confirmat-in-romania-o-femeie-de-42-de-ani-din-bucuresti-o-apropiata-a-barbatului-confirmat-ieri.html",
-				"healed_reference": null,
-				"symptoms": "Nu",
-				"other_info": "Apropiata a primului pacient din București",
-				"country_of_infection": "România"
-			}
-		},
-		{
-			"name": 15,
-			"properties": {
-				"case_no": 15,
-				"source_no": null,
-				"status": "Confirmat",
-				"diagnostic_date": "08-03-2020",
-				"healing_date": null,
-				"death_date": null,
-				"gender": "Femeie",
-				"age": 70,
-				"county": "MUREȘ",
-				"uat": null,
-				"reference": "https://www.g4media.ro/breaking-caz-nou-de-coronavirus-in-romania-al-15-lea-o-femeie-de-70-de-ani-din-judetul-mures.html",
-				"healed_reference": null,
-				"symptoms": "Nu",
-				"other_info": "",
-				"country_of_infection": "Italia"
-			}
-		},
-		{
 			"name": 25,
 			"properties": {
 				"case_no": 25,
@@ -655,7 +575,7 @@
 				"reference": "https://www.hotnews.ro/stiri-sanatate-23713329-coronavirus-romania-copil-3-ani-femeie-insarcinata-printre-cei-8-pacienti-confirmati-marti.htm",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "Germania"
 			}
 		},
@@ -695,7 +615,7 @@
 				"reference": "https://adevarul.ro/news/eveniment/trei-cazuri-coronavirus-romania-bilantul-infectatilor-aajuns-28-persoane-1_5e67d6285163ec4271da3727/index.html",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "România"
 			}
 		},
@@ -715,7 +635,7 @@
 				"reference": "https://adevarul.ro/news/eveniment/trei-cazuri-coronavirus-romania-bilantul-infectatilor-aajuns-28-persoane-1_5e67d6285163ec4271da3727/index.html",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "România"
 			}
 		},
@@ -735,7 +655,7 @@
 				"reference": "https://www.g4media.ro/breaking-al-29-lea-caz-de-coronavirus-confirmat-in-bucuresti-o-femeie-de-47-de-ani.html",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "România"
 			}
 		},
@@ -835,7 +755,87 @@
 				"reference": "https://www.digi24.ro/stiri/actualitate/un-nou-caz-de-coronavirus-confirmat-in-romania-bilantul-ajunge-la-50-de-presoane-infectate-1274440",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
+				"country_of_infection": "Italia"
+			}
+		},
+		{
+			"name": 12,
+			"properties": {
+				"case_no": 12,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "07-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 49,
+				"county": "BUCUREȘTI",
+				"uat": "BUCUREȘTI",
+				"reference": "https://www.hotnews.ro/stiri-esential-23706648-primul-caz-coronavirus-confirmat-bucuresti-este-12-lea-nivel-national.htm",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": "Italia"
+			}
+		},
+		{
+			"name": 13,
+			"properties": {
+				"case_no": 13,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "07-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Bărbat",
+				"age": 72,
+				"county": "GALAȚI",
+				"uat": null,
+				"reference": "https://www.rfi.ro/social-118945-coronavirus-13-cazuri-au-fost-confirmate-romania-dintre-care-unul-bucuresti",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
+				"country_of_infection": "Italia"
+			}
+		},
+		{
+			"name": 14,
+			"properties": {
+				"case_no": 14,
+				"source_no": 12,
+				"status": "Confirmat",
+				"diagnostic_date": "08-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 42,
+				"county": "BUCUREȘTI",
+				"uat": "BUCUREȘTI",
+				"reference": "https://www.g4media.ro/breaking-al-14-lea-caz-de-coronavirus-confirmat-in-romania-o-femeie-de-42-de-ani-din-bucuresti-o-apropiata-a-barbatului-confirmat-ieri.html",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": "Apropiata a primului pacient din București",
+				"country_of_infection": "România"
+			}
+		},
+		{
+			"name": 15,
+			"properties": {
+				"case_no": 15,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "08-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 70,
+				"county": "MUREȘ",
+				"uat": null,
+				"reference": "https://www.g4media.ro/breaking-caz-nou-de-coronavirus-in-romania-al-15-lea-o-femeie-de-70-de-ani-din-judetul-mures.html",
+				"healed_reference": null,
+				"symptoms": "Nu",
+				"other_info": null,
 				"country_of_infection": "Italia"
 			}
 		},
@@ -915,7 +915,7 @@
 				"reference": "https://www.news.ro/social/al-45-lea-caz-de-coronavirus-diagnosticat-un-barbat-de-20-de-ani-din-iasi-asimptomatic-1922400011002020032219299763",
 				"healed_reference": null,
 				"symptoms": "Da",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "Italia"
 			}
 		},
@@ -935,7 +935,7 @@
 				"reference": "https://www.hotnews.ro/stiri-esential-23716932-doua-noi-cazuri-coronavirus-romania-bilantul-47.htm",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "România"
 			}
 		},
@@ -955,7 +955,7 @@
 				"reference": "https://www.hotnews.ro/stiri-esential-23716932-doua-noi-cazuri-coronavirus-romania-bilantul-47.htm",
 				"healed_reference": null,
 				"symptoms": "Da",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "România"
 			}
 		},
@@ -975,7 +975,7 @@
 				"reference": "https://www.digi24.ro/stiri/actualitate/doua-cazuri-noi-de-coronavirus-confirmate-azi-1274092",
 				"healed_reference": null,
 				"symptoms": "Nu",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "România"
 			}
 		},
@@ -995,7 +995,7 @@
 				"reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
 				"healed_reference": null,
 				"symptoms": "Da",
-				"other_info": "",
+				"other_info": null,
 				"country_of_infection": "Italia"
 			}
 		}
