@@ -160,7 +160,7 @@ const width = 960, height = 500;
         node.append("text")
                 .attr("x", 8)
                 .attr("y", "0.31em")
-                .text(d => { return "#" + d.name + " " + d.properties.county; })
+                .text(d => { return "#" + d.name; })
                 .clone(true).lower()
                 .attr("fill", "none")
                 .attr("stroke", "white")
