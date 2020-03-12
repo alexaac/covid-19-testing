@@ -15,12 +15,9 @@ const graph = { nodes: [], links: [] };
     // Get nodes from links
     d3.json("relatii_cazuri.json").then(function(data) {
     
-        data = data.nodes;
-        const dummy = [];
+        data.nodes.forEach(function(d) {
 
-        data.forEach(function(d) {
-
-            dummy.push({
+            graph.links.push({
                 "source": d.properties.source_no || d.properties.case_no,
                 "target": d.properties.case_no,
                 "properties": d.properties, 
@@ -28,7 +25,6 @@ const graph = { nodes: [], links: [] };
             });
         });
     
-        graph.links = dummy;
         changeView();
     });
 
