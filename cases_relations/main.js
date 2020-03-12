@@ -1,8 +1,8 @@
 // https://gist.github.com/mbostock/1153292
 
-const graph = { nodes: [], links: [] }, dummy = [];
+const graph = { nodes: [], links: [] }, dummy = [], foreign_sources = [];
 
-const width = 960, height = 500;
+const width = 960, height = 600;
 
 
 (() => {
@@ -18,7 +18,6 @@ const width = 960, height = 500;
                 "properties": d.properties, 
                 "type": d.properties.country_of_infection != null ? d.properties.country_of_infection : 'local'
             });
-                   
         });
     
         update();
@@ -76,7 +75,7 @@ const width = 960, height = 500;
             link.target = graph.nodes[link.target] || (graph.nodes[link.target] = {name: link.target, properties: link.properties});
         });
 
-        const types = Array.from(new Set(graph.nodes.map(d => d.county)));
+        const types = Array.from(new Set(graph.links.map(d => d.type)));
         const color = d3.scaleOrdinal(types, d3.schemePaired);
 
         graph.nodes.shift();
@@ -85,7 +84,7 @@ const width = 960, height = 500;
 
         const simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.name))
-            .force("charge", d3.forceManyBody().strength(-100))
+            .force("charge", d3.forceManyBody().strength(-300))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .force('collision', d3.forceCollide().radius(function(d) {
                 return d.radius
@@ -106,16 +105,16 @@ const width = 960, height = 500;
                     .attr("orient", "auto")
                 .append("path")
                     .attr("fill", color)
-                    .attr("fill", "gray")
+                    .attr("fill", "#999")
                     .attr("d", "M0,-5L10,0L0,5");
         
         const link = svg.append("g")
                 .attr("fill", "none")
-                .attr("stroke-width", 1.5)
+                .attr("stroke-width", 1.2)
                 .selectAll("path")
                 .data(links)
                 .join("path")
-                    .attr("stroke", d => "gray")
+                    .attr("stroke", d => "#999")
                     .attr("marker-end", d => `url(${new URL(`#arrow-${d.type}`, location)})`);
 
         const drag = simulation => {
@@ -163,7 +162,7 @@ const width = 960, height = 500;
         node.append("text")
                 .attr("x", 8)
                 .attr("y", "0.31em")
-                .text(d => { return "#" + d.name; })
+                .text(d => { return "#" + d.name + (d.properties.country_of_infection != null ? (" <- " + d.properties.country_of_infection) : ""); })
                 .clone(true).lower()
                 .attr("fill", "none")
                 .attr("stroke", "white")
