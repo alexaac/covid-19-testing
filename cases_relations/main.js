@@ -7,16 +7,16 @@ const width = 960, height = 600;
 
 (() => {
     
-    d3.json("cazuri.json").then(function(data) {
+    d3.json("relatii_cazuri.json").then(function(data) {
     
-        data = data.data;
+        data = data.nodes;
         data.forEach(function(d) {
 
             dummy.push({
                 "source": d.properties.source_no || d.properties.case_no,
                 "target": d.properties.case_no,
                 "properties": d.properties, 
-                "type": d.properties.country_of_infection != null ? d.properties.country_of_infection : 'local'
+                "type": (d.properties.country_of_infection != null && d.properties.country_of_infection != "" && d.properties.country_of_infection != "România") ? d.properties.country_of_infection : 'local'
             });
         });
     
@@ -162,7 +162,7 @@ const width = 960, height = 600;
         node.append("text")
                 .attr("x", 8)
                 .attr("y", "0.31em")
-                .text(d => { return "#" + d.name + (d.properties.country_of_infection != null ? (" <- " + d.properties.country_of_infection) : ""); })
+                .text(d => { return "#" + d.name + ((d.properties.country_of_infection != null && d.properties.country_of_infection != "" && d.properties.country_of_infection != "România") ? (" <- " + d.properties.country_of_infection) : ""); })
                 .clone(true).lower()
                 .attr("fill", "none")
                 .attr("stroke", "white")
