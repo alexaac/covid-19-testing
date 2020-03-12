@@ -58,12 +58,12 @@ const width = 960, height = 500;
             .style("opacity", 0);
     };
 
-    const svg = d3.select("body").append("svg")
+    const svg = d3.select("#chart").append("svg")
         .attr("class", "chart-group")
         .attr("preserveAspectRatio", "xMidYMid")
         .attr("width", width)
         .attr("height", height)
-        .attr("viewBox", [-width / 2, -height / 2, width, height])
+        .attr("viewBox", [0, 0, width, height])
         .style("font", "12px sans-serif")
         .on("click", () => { unHighlight(); });
 
@@ -76,9 +76,8 @@ const width = 960, height = 500;
             link.target = graph.nodes[link.target] || (graph.nodes[link.target] = {name: link.target, properties: link.properties});
         });
 
-
-        const types = Array.from(new Set(graph.links.map(d => d.type)));
-        const color = d3.scaleOrdinal(d3.schemePaired);
+        const types = Array.from(new Set(graph.nodes.map(d => d.county)));
+        const color = d3.scaleOrdinal(types, d3.schemePaired);
 
         graph.nodes.shift();
         const links = graph.links;
@@ -86,7 +85,11 @@ const width = 960, height = 500;
 
         const simulation = d3.forceSimulation(nodes)
             .force("link", d3.forceLink(links).id(d => d.name))
-            .force("charge", d3.forceManyBody().strength(-400))
+            .force("charge", d3.forceManyBody().strength(-100))
+            .force("center", d3.forceCenter(width / 2, height / 2))
+            .force('collision', d3.forceCollide().radius(function(d) {
+                return d.radius
+            }))
             .force("x", d3.forceX())
             .force("y", d3.forceY());
             
