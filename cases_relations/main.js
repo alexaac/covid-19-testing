@@ -1,7 +1,7 @@
 // https://gist.github.com/mbostock/1153292
 
 // set the dimensions and margins of the graph
-const margin = {top: 50, right: 50, bottom: 50, left: 100},
+const margin = {top: 50, right: 50, bottom: 50, left: 50},
     width = 960 - margin.left - margin.right,
     height = 960 - margin.top - margin.bottom,
     svg_width = width + margin.left + margin.right,
@@ -39,20 +39,18 @@ const graph = { nodes: [], links: [] };
             .duration(200)    
             .style("opacity", .9);    
         tooltip_div.html(tooltipHTML(d))
-            .style("left", (d3.event.pageX/1.5) + "px")
-            .style("top", (d3.event.pageY/1.5) + "px");
-        d3.selectAll(".CO-" + d.properties.case_no)
-            .attr("style", "stroke: #00ffff; stroke-Config.viewport_width: 2px; fill-opacity: 0.8; cursor: pointer;");
+            .style("left", (d3.event.pageX - 40) + "px")
+            .style("top", (d3.event.pageY) + "px");
     };
 
     const tooltipHTML = (d) => {
         return "<b>Cazul " + d.properties.case_no + "</b><br />" +
-        (d.properties.gender === 'Bărbat' ? "Bărbat, " : "Femeie, ") +
-        (d.properties.age != null ? d.properties.age + "," : "") +
-        " din  " + d.properties.county + ".<br />" +
-        "Status: " + (d.properties.status === "Vindecat" ? "vindecat" : "spitalizat") + ".<br />" +
-        (d.properties.healing_date !== null ? ("Data recuperării: " + d.properties.healing_date + ".<br />") : "") +
-        (d.properties.reference !== null && d.properties.reference !== "" ? ("Detalii: " + '<a href="' + d.properties.reference + '" target= "_blank">aici</a>') : "");
+            (d.properties.gender === 'Bărbat' ? "Bărbat, " : "Femeie, ") +
+            (d.properties.age != null ? d.properties.age + "," : "") +
+            " din  " + d.properties.county + ".<br />" +
+            "Status: " + (d.properties.status === "Vindecat" ? "vindecat" : "spitalizat") + ".<br />" +
+            (d.properties.healing_date !== null ? ("Data recuperării: " + d.properties.healing_date + ".<br />") : "") +
+            (d.properties.reference !== null && d.properties.reference !== "" ? ("Detalii: " + '<a href="' + d.properties.reference + '" target= "_blank">aici</a>') : "");
     };
 
     const unHighlight = () => {
