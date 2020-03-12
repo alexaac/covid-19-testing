@@ -64,7 +64,6 @@ tooltip_div.tooltip {
     line-height: 12pt;
     font-family:  "EB Garamond", serif;
     visibility: visible;
-    pointer-events: none;
 }
 
 /* Small devices (tablets, 768px and up) */
