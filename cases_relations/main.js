@@ -164,7 +164,6 @@ const graph = { nodes: [], links: [] };
             .attr("r", 8)
             .attr("fill", function(d) { return d.parent ? color(d.parent.properties.county) : color(d.properties.county); })
             .attr("stroke", function(d) { return d.properties.status === 2 ? 'green' : '#333'; })
-            .on("click", d => highlight(d)) 
             .on("mouseover", d => highlight(d));
             
         node.append("text")
