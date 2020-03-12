@@ -1,21 +1,22 @@
 // https://gist.github.com/mbostock/1153292
 
-const color = d3.scale.category20c();
 const graph = { nodes: [], links: [] }, dummy = [];
+
+const width = 960, height = 500;
 
 
 (() => {
     
-    d3.json("./cazuri.json", function(error, json) {
-        if (error) throw error;
+    d3.json("cazuri.json").then(function(data) {
     
-        data = json.data;
+        data = data.data;
         data.forEach(function(d) {
-    
+    console.log(d);
             dummy.push({
-                "source": d.source_no || d.case_no,
-                "target": d.case_no,
-                "properties": d
+                "source": d.properties.source_no || d.properties.case_no,
+                "target": d.properties.case_no,
+                "properties": d.properties, 
+                "type": d.properties.country_of_infection != null ? d.properties.country_of_infection : 'local'
             });
                    
         });
@@ -50,14 +51,26 @@ const graph = { nodes: [], links: [] }, dummy = [];
         return "<b>Cazul " + d.properties.case_no + "</b><br />" +
         (d.properties.gender === 'M' ? "Bărbat, " : "Femeie, ") +
         (d.properties.age != null ? d.properties.age + "," : "") +
-        ( d.properties.county_code === "B" ? " din București" : (" din județul " + 
-        d.properties.county_code)) + ".<br />" +
-        "Status: " + (d.properties.status === 2 ? "recuperat" : "în spitalizare") + ".<br />" +
+        ( d.properties.county_code === "B" ? " din București" : (" din  " + 
+        d.properties.county)) + ".<br />" +
+        "Status: " + (d.properties.status === "Vindecat" ? "vindecat" : "în spitalizare") + ".<br />" +
         (d.properties.healing_date !== null ? ("Data recuperării: " + d.properties.healing_date + ".<br />") : "") +
         (d.properties.reference !== null && d.properties.reference !== "" ? ("Detalii: " + '<a href="' + d.properties.reference + '" target= "_blank">aici</a>') : "");
     };
 
+    const svg = d3.select("body").append("svg")
+        .attr("class", "chart-group")
+        .attr("preserveAspectRatio", "xMidYMid")
+        .attr("width", width)
+        .attr("height", height)
+        .attr("viewBox", [-width / 2, -height / 2, width, height])
+        .style("font", "12px sans-serif")
+        .on("click", () => { unHighlight(); });
+
+        
     function update() {
+        
+        console.log(graph);
 
         graph.links = dummy;
         // Compute the distinct nodes from the links.
@@ -66,83 +79,112 @@ const graph = { nodes: [], links: [] }, dummy = [];
             link.target = graph.nodes[link.target] || (graph.nodes[link.target] = {name: link.target, properties: link.properties});
         });
 
-        var width = 960,
-                height = 500;
 
-        var force = d3.layout.force()
-                .nodes(d3.values(graph.nodes))
-                .links(d3.values(graph.links))
-                .size([width, height])
-                .linkDistance(60)
-                .charge(-300)
-                .on("tick", tick)
-                .start();
+        const types = Array.from(new Set(graph.links.map(d => d.type)));
+        const color = d3.scaleOrdinal(types, d3.schemeCategory10);
+
+        graph.nodes.shift();
+        console.log(graph);
+        const links = graph.links;
+        const nodes = graph.nodes;
+
+        console.log(links);
+        console.log(nodes);
+
+        const simulation = d3.forceSimulation(nodes)
+            .force("link", d3.forceLink(links).id(d => d.name))
+            .force("charge", d3.forceManyBody().strength(-400))
+            .force("x", d3.forceX())
+            .force("y", d3.forceY());
             
-        var svg = d3.select("body").append("svg")
-                .attr("width", width)
-                .attr("height", height)
-                .on("click", () => { unHighlight(); });
-        
         // Per-type markers, as they don't inherit styles.
         svg.append("defs").selectAll("marker")
-                .data(["suit", "licensing", "resolved"])
-                .enter().append("marker")
-                    .attr("id", function(d) { return d; })
+        .data(types)
+                .join("marker")
+                    .attr("id", d => `arrow-${d}`)
                     .attr("viewBox", "0 -5 10 10")
                     .attr("refX", 15)
-                    .attr("refY", -1.5)
+                    .attr("refY", -0.5)
                     .attr("markerWidth", 6)
                     .attr("markerHeight", 6)
                     .attr("orient", "auto")
                 .append("path")
+                    .attr("fill", color)
+                    .attr("fill", "gray")
                     .attr("d", "M0,-5L10,0L0,5");
         
-            
+        const link = svg.append("g")
+                .attr("fill", "none")
+                .attr("stroke-width", 1.5)
+                .selectAll("path")
+                .data(links)
+                .join("path")
+                    .attr("stroke", d => "gray")
+                    .attr("marker-end", d => `url(${new URL(`#arrow-${d.type}`, location)})`);
 
-        var path = svg.append("g").selectAll("path")
-                .data(force.links())
-                .enter().append("path")
-                    .attr("class", function(d) { return "link " + d.type; })
-                    .attr("marker-end", function(d) { return "url(#" + d.type + ")"; });
+        const drag = simulation => {
+
+            function dragstarted(d) {
+                if (!d3.event.active) simulation.alphaTarget(0.3).restart();
+                d.fx = d.x;
+                d.fy = d.y;
+            }
+            
+            function dragged(d) {
+                d.fx = d3.event.x;
+                d.fy = d3.event.y;
+            }
+            
+            function dragended(d) {
+                if (!d3.event.active) simulation.alphaTarget(0);
+                d.fx = null;
+                d.fy = null;
+            }
+            
+            return d3.drag()
+                .on("start", dragstarted)
+                .on("drag", dragged)
+                .on("end", dragended);
+        };
+
+        const node = svg.append("g")
+            .attr("stroke-linecap", "round")
+            .attr("stroke-linejoin", "round")
+            .selectAll("g")
+            .data(nodes)
+            .join("g")
+                .call(drag(simulation));
         
-        var circle = svg.append("g").selectAll("circle")
-                .data(force.nodes())
-                .enter().append("circle")
-                    .attr("r", 8)
-                    .attr("fill", function(d) { return d.parent ? color(d.parent.properties.county_code) : color(d.properties.county_code); })
-                    .attr("stroke", function(d) { return d.properties.status === 2 ? 'green' : '#333'; })
-                    .on("click", d => highlight(d)) 
-                    .on("mouseover", d => highlight(d))
-                    // .on("mouseout", d => unHighlight(d))
-                    .call(force.drag);
+        node.append("circle")
+            .attr("stroke", "white")
+            .attr("stroke-width", 1.5)
+            .attr("r", 6)
+            .attr("fill", function(d) { return d.parent ? color(d.parent.properties.county) : color(d.properties.county); })
+            .attr("stroke", function(d) { return d.properties.status === 2 ? 'green' : '#333'; })
+            .on("click", d => highlight(d)) 
+            .on("mouseover", d => highlight(d));
             
-        circle.append("title")
-                .text(function(d) { return d.properties.description; });
+        node.append("text")
+                .attr("x", 8)
+                .attr("y", "0.31em")
+                .text(d => { return "#" + d.name + " " + d.properties.county; })
+                .clone(true).lower()
+                .attr("fill", "none")
+                .attr("stroke", "white")
+                .attr("stroke-width", 3);
 
-        var text = svg.append("g").selectAll("text")
-                .data(force.nodes())
-                .enter().append("text")
-                    .attr("x", 8)
-                    .attr("y", ".31em")
-                    .text(function(d) { return "#" + d.name + " " + d.properties.county_code; });
-
-        // Use elliptical arc path segments to doubly-encode directionality.
-        function tick() {
-                path.attr("d", linkArc);
-                circle.attr("transform", transform);
-                text.attr("transform", transform);
-        }
+        simulation.on("tick", () => {
+            link.attr("d", linkArc);
+            node.attr("transform", d => `translate(${d.x},${d.y})`);
+        });
         
         function linkArc(d) {
-            var dx = d.target.x - d.source.x,
-                dy = d.target.y - d.source.y,
-                dr = Math.sqrt(dx * dx + dy * dy);
-            return "M" + d.source.x + "," + d.source.y + "A" + dr + "," + dr + " 0 0,1 " + d.target.x + "," + d.target.y;
-        }
-        
-        function transform(d) {
-                return "translate(" + d.x + "," + d.y + ")";
-        }
+            const r = Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
+            return `
+              M${d.source.x},${d.source.y}
+              A${r},${r} 0 0,1 ${d.target.x},${d.target.y}
+            `;
+        };
 
     };
 
