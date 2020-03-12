@@ -44,9 +44,8 @@ const width = 960, height = 600;
         return "<b>Cazul " + d.properties.case_no + "</b><br />" +
         (d.properties.gender === 'Bărbat' ? "Bărbat, " : "Femeie, ") +
         (d.properties.age != null ? d.properties.age + "," : "") +
-        ( d.properties.county_code === "B" ? " din București" : (" din  " + 
-        d.properties.county)) + ".<br />" +
-        "Status: " + (d.properties.status === "Vindecat" ? "vindecat" : "în spitalizare") + ".<br />" +
+        " din  " + d.properties.county + ".<br />" +
+        "Status: " + (d.properties.status === "Vindecat" ? "vindecat" : "spitalizat") + ".<br />" +
         (d.properties.healing_date !== null ? ("Data recuperării: " + d.properties.healing_date + ".<br />") : "") +
         (d.properties.reference !== null && d.properties.reference !== "" ? ("Detalii: " + '<a href="' + d.properties.reference + '" target= "_blank">aici</a>') : "");
     };
