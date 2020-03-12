@@ -128,9 +128,9 @@ const y = d3.scaleLinear().range([height, 0]);
 
         /******************************** Legend ********************************/
         const statuses = [
-            { status: "total", color: "steelblue", label: "Cazuri confirmate"},
-            { status: "healed", color: "limegreen", label: "Recuperări" },
-            { status: "dead", color: "red", label: "Decese" }
+            { status: "total", color: "var(--main-confirmate)", label: "Cazuri confirmate"},
+            { status: "healed", color: "var(--main-recuperari)", label: "Recuperări" },
+            { status: "dead", color: "var(--main-decese)", label: "Decese" }
         ];
 
         const legend = svg.append("g")

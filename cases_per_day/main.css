@@ -12,6 +12,12 @@ body {
     padding: 0px;
 }
 
+:root {
+    --main-confirmate:steelblue ;
+    --main-recuperari: limegreen;
+    --main-decese: #b2beb5;
+}
+
 .wrapper {
     margin: 0 20;
     max-width: 1200px;
@@ -23,7 +29,7 @@ svg.chart-group {
 }
 
 path { 
-    stroke: steelblue;
+    stroke: grey;
     stroke-width: 2;
     fill: none;
 }
@@ -35,11 +41,14 @@ path {
     shape-rendering: crispEdges;
 }
 
+.line_total {
+    stroke: var(--main-confirmate);
+}
 .line_healed {
-    stroke:limegreen;
+    stroke: var(--main-recuperari);
 }
 .line_dead {
-    stroke: red;
+    stroke: var(--main-decese);
 }
 
 .overlay {
