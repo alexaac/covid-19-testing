@@ -45,7 +45,8 @@ const y = d3.scaleLinear().range([height, 0]);
     ];
 
     Promise.all(promises).then( data => {
-        const cases_data = data[0].data;
+
+        const cases_data = data[0].data.data;
 
         // parse the date / time
         const parseTime = d3.timeParse("%Y-%m-%d");

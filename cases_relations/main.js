@@ -15,8 +15,8 @@ const graph = { nodes: [], links: [] };
     // Get nodes from links
     d3.json("relatii_cazuri.json").then(function(data) {
     
-        graph.nodes = data.nodes;
-        graph.links = data.links;
+        graph.nodes = data.data.nodes;
+        graph.links = data.data.links;
 
         changeView();
     });
