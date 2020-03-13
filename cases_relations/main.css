@@ -64,6 +64,11 @@ tooltip_div.tooltip {
     font-family:  "EB Garamond", serif;
 }
 
+.slider {
+    padding: 10px;
+    margin: 10px;
+}
+
 /* Small devices (tablets, 768px and up) */
 @media (min-width: 550px) {
     .wrapper {

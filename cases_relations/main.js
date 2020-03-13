@@ -81,6 +81,7 @@ const graph = { nodes: [], links: [] };
     const changeView = () => {
 
         const types = Array.from(new Set(graph.nodes.map(d => d.source)));
+        const cases = Array.from(new Set(graph.nodes.map(d => d.properties.case_no)));
         const color = d3.scaleOrdinal(d3.schemePaired).domain(types);
 
         // graph.nodes.shift();
@@ -159,6 +160,7 @@ const graph = { nodes: [], links: [] };
                 .call(drag(simulation));
         
         node.append("circle")
+            .attr("class", d => `CO-${d.properties.case_no}`)
             .attr("stroke", "white")
             .attr("stroke-width", 1.5)
             .attr("r", 8)
@@ -181,6 +183,45 @@ const graph = { nodes: [], links: [] };
             node.attr("transform", d => `translate(${d.x},${d.y})`);
         });
         
+        // Case slider
+        // https://bl.ocks.org/d3noob/c4b31a539304c29767a56c2373eeed79/9d18fc47e580d8c940ffffea1179e77e62647e36
+        d3.select("#nRadius").property("max", d3.max(cases));
+
+        // when the input range changes highlight the circle
+        d3.select("#nRadius").on("input", function() {
+            update(+this.value);
+        });
+
+        // Select first case
+        update(1);
+
+        // update the elements
+        function update(nRadius) {
+
+            // adjust the text on the range slider
+            d3.select("#nRadius-value").text(nRadius);
+            d3.select("#nRadius").property("value", nRadius);
+
+            // highlight case
+            d3.selectAll("circle")
+                .attr("stroke-width", "1.5px")
+                .attr("r", 8)
+                .attr("fill-opacity", 1);
+            d3.selectAll(".CO-" + nRadius)
+                .attr("r", 15)
+                .attr("stroke-width", "10px")
+                .attr("fill-opacity", 0.1);
+        }
+
+        /******************************** Title ********************************/
+        svg.append("text")
+            .attr("x", (width / 2))
+            .attr("y", 0 - (margin.top / 4))
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
+            .style("text-decoration", "underline")
+            .text("Relația cazurilor confirmate");
+
         function linkArc(d) {
             const r = Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
             return `

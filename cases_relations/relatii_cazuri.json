@@ -998,7 +998,443 @@
 				"other_info": null,
 				"country_of_infection": "Italia"
 			}
-		}
+        },
+        {
+			"name": 50,
+			"properties": {
+				"case_no": 50,
+				"source_no": null,
+				"status": "Confirmat",
+				"diagnostic_date": "12-03-2020",
+				"healing_date": null,
+				"death_date": null,
+				"gender": "Femeie",
+				"age": 45,
+				"county": "BUCUREȘTI",
+				"uat": null,
+				"reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+				"healed_reference": null,
+				"symptoms": "Da",
+				"other_info": null,
+				"country_of_infection": "Italia"
+			}
+		},
+        
+        { "name": 51,
+        "properties": {
+            "case_no": 51,
+            "source_no": null,
+            "status": "Confirmat",
+            "diagnostic_date": "12-03-2020",
+            "healing_date": null,
+            "death_date": null,
+            "gender": "Femeie",
+            "age": 45,
+            "county": "BUCUREȘTI",
+            "uat": null,
+            "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+            "healed_reference": null,
+            "symptoms": "Da",
+            "other_info": null,
+            "country_of_infection": "Italia"
+        }
+    },
+        
+    { "name": 52,
+    "properties": {
+        "case_no": 52,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": "Italia"
+    }
+    },
+            
+    { "name": 53,
+    "properties": {
+        "case_no": 53,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": null
+    }
+    },
+            
+    { "name": 54,
+    "properties": {
+        "case_no": 54,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": null
+    }
+    },
+            
+    { "name": 55,
+    "properties": {
+        "case_no": 55,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": null
+    }
+    },
+            
+    { "name": 56,
+    "properties": {
+        "case_no": 56,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": null
+    }
+    },
+            
+    { "name": 57,
+        "properties": {
+            "case_no": 57,
+            "source_no": null,
+            "status": "Confirmat",
+            "diagnostic_date": "12-03-2020",
+            "healing_date": null,
+            "death_date": null,
+            "gender": "Femeie",
+            "age": 45,
+            "county": "BUCUREȘTI",
+            "uat": null,
+            "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+            "healed_reference": null,
+            "symptoms": "Da",
+            "other_info": null,
+            "country_of_infection": null
+        }
+    },
+    { "name": 58,
+    "properties": {
+        "case_no": 58,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": null
+    }
+    },
+            
+    { "name": 59,
+    "properties": {
+        "case_no": 59,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": "Italia"
+    }
+    },
+            
+    { "name": 60,
+    "properties": {
+        "case_no": 60,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": null
+    }
+    },
+            
+    { "name": 61,
+    "properties": {
+        "case_no": 61,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": null
+    }
+    },
+            
+    { "name": 62,
+    "properties": {
+        "case_no": 62,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": null
+    }
+    },
+            
+    { "name": 63,
+    "properties": {
+        "case_no": 63,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": "Italia"
+    }
+    },
+            
+    { "name": 64,
+    "properties": {
+        "case_no": 64,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": null
+    }
+    },
+            
+    { "name": 65,
+    "properties": {
+        "case_no": 65,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": null
+    }
+    },
+            
+    { "name": 66,
+    "properties": {
+        "case_no": 66,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": null
+    }
+    },
+            
+    { "name": 66,
+    "properties": {
+        "case_no": 66,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": "Italia"
+    }
+    },
+            
+    { "name": 67,
+    "properties": {
+        "case_no": 67,
+        "source_no": null,
+        "status": "Confirmat",
+        "diagnostic_date": "12-03-2020",
+        "healing_date": null,
+        "death_date": null,
+        "gender": "Femeie",
+        "age": 45,
+        "county": "BUCUREȘTI",
+        "uat": null,
+        "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+        "healed_reference": null,
+        "symptoms": "Da",
+        "other_info": null,
+        "country_of_infection": "Italia"
+    }
+    },
+    { "name": 68,
+        "properties": {
+            "case_no": 68,
+            "source_no": null,
+            "status": "Confirmat",
+            "diagnostic_date": "12-03-2020",
+            "healing_date": null,
+            "death_date": null,
+            "gender": "Femeie",
+            "age": 45,
+            "county": "BUCUREȘTI",
+            "uat": null,
+            "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+            "healed_reference": null,
+            "symptoms": "Da",
+            "other_info": null,
+            "country_of_infection": "Italia"
+        }
+        },
+        { "name": 69,
+            "properties": {
+                "case_no": 69,
+                "source_no": null,
+                "status": "Confirmat",
+                "diagnostic_date": "12-03-2020",
+                "healing_date": null,
+                "death_date": null,
+                "gender": "Femeie",
+                "age": 45,
+                "county": "BUCUREȘTI",
+                "uat": null,
+                "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+                "healed_reference": null,
+                "symptoms": "Da",
+                "other_info": null,
+                "country_of_infection": "Italia"
+            }
+            },
+            { "name": 70,
+                "properties": {
+                    "case_no": 70,
+                    "source_no": null,
+                    "status": "Confirmat",
+                    "diagnostic_date": "12-03-2020",
+                    "healing_date": null,
+                    "death_date": null,
+                    "gender": "Femeie",
+                    "age": 45,
+                    "county": "BUCUREȘTI",
+                    "uat": null,
+                    "reference": "https://www.biziday.ro/cazuri-de-coronavirus-confirmate-in-romania/?source=biziday",
+                    "healed_reference": null,
+                    "symptoms": "Da",
+                    "other_info": null,
+                    "country_of_infection": "Italia"
+                }
+                }
 	],
 	"links": [{
 			"source": 1,
@@ -1199,6 +1635,86 @@
 		{
 			"source": 50,
 			"target": 50
+		},
+		{
+			"source": 51,
+			"target": 51
+		},
+		{
+			"source": 52,
+			"target": 52
+		},
+		{
+			"source": 53,
+			"target": 53
+		},
+		{
+			"source": 54,
+			"target": 54
+		},
+		{
+			"source": 55,
+			"target": 55
+		},
+		{
+			"source": 56,
+			"target": 56
+		},
+		{
+			"source": 57,
+			"target": 57
+		},
+		{
+			"source": 58,
+			"target": 58
+		},
+		{
+			"source": 59,
+			"target": 59
+		},
+		{
+			"source": 60,
+			"target": 60
+		},
+		{
+			"source": 61,
+			"target": 61
+		},
+		{
+			"source": 62,
+			"target": 62
+		},
+		{
+			"source": 63,
+			"target": 63
+		},
+		{
+			"source": 64,
+			"target": 64
+		},
+		{
+			"source": 65,
+			"target": 65
+		},
+		{
+			"source": 66,
+			"target": 66
+		},
+		{
+			"source": 67,
+			"target": 67
+		},
+		{
+			"source": 68,
+			"target": 68
+		},
+		{
+			"source": 69,
+			"target": 69
+		},
+		{
+			"source": 70,
+			"target": 70
 		}
 	]
 }
