@@ -52,8 +52,8 @@ const graph = { nodes: [], links: [] };
     function responsivefy(svg) {
         // get container + svg aspect ratio
         var container = d3.select(svg.node().parentNode),
-            width = parseInt(svg.style("width")),
-            height = parseInt(svg.style("height")),
+            width = parseInt(svg.style("width"))*2,
+            height = parseInt(svg.style("height"))*2,
             aspect = width / height;
 
         // add viewBox and preserveAspectRatio properties,
