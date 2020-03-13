@@ -71,14 +71,17 @@ const graph = { nodes: [], links: [] };
     const changeView = () => {
 
         const types = Array.from(new Set(graph.nodes.map(d => d.source)));
-        const color = d3.scaleOrdinal(types, d3.schemePaired);
+        const color = d3.scaleOrdinal(d3.schemePaired).domain(types);
 
         // graph.nodes.shift();
         const links = graph.links;
         const nodes = graph.nodes;
 
         const simulation = d3.forceSimulation(nodes)
-            .force("link", d3.forceLink(links).id(d => d.name))
+            .force("link", d3.forceLink(links).id( d => {
+                let name = JSON.parse(JSON.stringify(d)).name;
+                return name;
+            }))
             .force("charge", d3.forceManyBody().strength(-300))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .force('collision', d3.forceCollide().radius(function(d) {
@@ -110,7 +113,7 @@ const graph = { nodes: [], links: [] };
                 .data(links)
                 .join("path")
                     .attr("stroke", d => "#999")
-                    .attr("marker-end", d => `url(${new URL(`#arrow-${d.type}`, location)})`);
+                    .attr("marker-end", d => `url(${new URL(`#arrow-${d.type}`, location.toString())})`);
 
         const drag = simulation => {
 
