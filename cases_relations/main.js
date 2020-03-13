@@ -1,11 +1,7 @@
 // https://gist.github.com/mbostock/1153292
 
 // set the dimensions and margins of the graph
-const margin = {top: 50, right: 50, bottom: 50, left: 50},
-    width = 960 - margin.left - margin.right,
-    height = 960 - margin.top - margin.bottom,
-    svg_width = width + margin.left + margin.right,
-    svg_height = height + margin.top + margin.bottom;
+const width = 960, height = 960;
 
 const graph = { nodes: [], links: [] };
 
@@ -52,6 +48,34 @@ const graph = { nodes: [], links: [] };
             .style("opacity", 0);
     };
 
+    // https://brendansudol.com/writing/responsive-d3
+    function responsivefy(svg) {
+        // get container + svg aspect ratio
+        var container = d3.select(svg.node().parentNode),
+            width = parseInt(svg.style("width")),
+            height = parseInt(svg.style("height")),
+            aspect = width / height;
+
+        // add viewBox and preserveAspectRatio properties,
+        // and call resize so that svg resizes on inital page load
+        svg.attr("viewBox", "0 0 " + width + " " + height)
+            .attr("perserveAspectRatio", "xMinYMid")
+            .call(resize);
+
+        // to register multiple listeners for same event type,
+        // you need to add namespace, i.e., 'click.foo'
+        // necessary if you call invoke this function for multiple svgs
+        // api docs: https://github.com/mbostock/d3/wiki/Selections#on
+        d3.select(window).on("resize." + container.attr("id"), resize);
+
+        // get width of container and resize svg to fit it
+        function resize() {
+            var targetWidth = parseInt(container.style("width"));
+            svg.attr("width", targetWidth);
+            svg.attr("height", Math.round(targetWidth / aspect));
+        }
+    }
+
     // append the svg object to the chart div
     // appends a 'group' element to 'svg'
     // moves the 'group' element to the top left margin
@@ -60,13 +84,11 @@ const graph = { nodes: [], links: [] };
         .append("svg")
         .attr("class", "chart-group")
         .attr("preserveAspectRatio", "xMidYMid")
-        .attr("width", svg_width)
-        .attr("height", svg_height)
-        .attr("viewBox", '0, 0 ' + svg_width + ' ' + svg_height)
+        .attr("width", width)
+        .attr("height", height)
+        .attr("viewBox", '0, 0 ' + width + ' ' + height)
         .on("click", () => { unHighlight(); })
-            .append("g")
-                .attr("transform",
-                "translate(" + margin.left + "," + margin.top + ")");
+            .call(responsivefy);
 
     const changeView = () => {
 
