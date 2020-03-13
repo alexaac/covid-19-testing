@@ -214,13 +214,13 @@ const graph = { nodes: [], links: [] };
         }
 
         /******************************** Title ********************************/
-        svg.append("text")
-            .attr("x", (width / 2))
-            .attr("y", 0 - (margin.top))
-            .attr("text-anchor", "middle")
-            .style("font-size", "16px")
-            .style("text-decoration", "underline")
-            .text("Relația cazurilor confirmate");
+        // svg.append("text")
+        //     .attr("x", (width / 2))
+        //     .attr("y", 0 - (margin.top))
+        //     .attr("text-anchor", "middle")
+        //     .style("font-size", "16px")
+        //     .style("text-decoration", "underline")
+        //     .text("Relația cazurilor confirmate");
 
         function linkArc(d) {
             const r = Math.hypot(d.target.x - d.source.x, d.target.y - d.source.y);
