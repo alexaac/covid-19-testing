@@ -41,7 +41,7 @@ const y = d3.scaleLinear().range([height, 0]);
 
     // Get the data
     const promises = [
-        d3.json("cazuri_pe_zile.json")
+        d3.json("https://covid19.geo-spatial.org/api/dashboard/getDailyCaseReport")
     ];
 
     Promise.all(promises).then( data => {
