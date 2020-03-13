@@ -163,7 +163,7 @@ const graph = { nodes: [], links: [] };
             .attr("stroke-width", 1.5)
             .attr("r", 8)
             .attr("fill", function(d) {return d.parent ? color(d.parent.properties.county) : color(d.properties.county); })
-            .attr("stroke", function(d) { return d.properties.status === 2 ? 'green' : '#333'; })
+            .attr("stroke", function(d) { return d.properties.status === "Vindecat" ? 'green' : '#333'; })
             .on("mouseenter", d => highlight(d))
             .on("mouseleave", (d) => { unHighlight(); });
             
