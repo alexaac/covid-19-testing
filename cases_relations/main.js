@@ -13,7 +13,7 @@ const graph = { nodes: [], links: [] };
 (() => {
     
     // Get nodes from links
-    d3.json("relatii_cazuri.json").then(function(data) {
+    d3.json("https://covid19.geo-spatial.org/api/statistics/getCaseRelations").then(function(data) {
     
         graph.nodes = data.data.nodes;
         graph.links = data.data.links;
@@ -93,7 +93,7 @@ const graph = { nodes: [], links: [] };
                 let name = JSON.parse(JSON.stringify(d)).name;
                 return name;
             }))
-            .force("charge", d3.forceManyBody().strength(-300))
+            .force("charge", d3.forceManyBody().strength(-200))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .force('collision', d3.forceCollide().radius(function(d) {
                 return d.radius
@@ -166,8 +166,8 @@ const graph = { nodes: [], links: [] };
             .attr("r", 8)
             .attr("fill", function(d) {return d.parent ? color(d.parent.properties.county) : color(d.properties.county); })
             .attr("stroke", function(d) { return d.properties.status === "Vindecat" ? 'green' : '#333'; })
-            .on("mouseenter", d => highlight(d))
-            .on("mouseleave", (d) => { unHighlight(); });
+            .on("mouseenter", d => highlight(d));
+            // .on("mouseleave", (d) => { unHighlight(); });
             
         node.append("text")
                 .attr("x", 8)
@@ -216,7 +216,7 @@ const graph = { nodes: [], links: [] };
         /******************************** Title ********************************/
         svg.append("text")
             .attr("x", (width / 2))
-            .attr("y", 0 - (margin.top / 4))
+            .attr("y", 0 - (margin.top))
             .attr("text-anchor", "middle")
             .style("font-size", "16px")
             .style("text-decoration", "underline")
