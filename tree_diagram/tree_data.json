@@ -1,0 +1,311 @@
+{
+  "name": "COVID-19",
+  "value": 10,
+  "type": "black",
+  "level": "red",
+  "icon": "https://user-images.githubusercontent.com/3151700/69676618-06e60500-1099-11ea-8c5c-dcb70dae1cb8.png",
+  "children": [
+        {
+            "name": "Italia",
+            "value": 5,
+            "type": "grey",
+            "level": "red",
+            "icon": "https://user-images.githubusercontent.com/3151700/69676637-0fd6d680-1099-11ea-85ab-2a9e68229328.png",
+            "children": [
+                {
+                    "name": 1,
+                    "properties": {
+                        "case_no": 1,
+                        "source_no": null,
+                        "status": "Vindecat",
+                        "diagnostic_date": "26-02-2020",
+                        "healing_date": "01-03-2020",
+                        "death_date": null,
+                        "gender": "Bărbat",
+                        "age": 25,
+                        "county": "GORJ",
+                        "uat": null,
+                        "reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+                        "healed_reference": "https://www.libertatea.ro/stiri/primul-caz-coronavirus-confirmat-romania-2896137",
+                        "symptoms": "Da",
+                        "other_info": "Cazul Vânătoarea",
+                        "country_of_infection": "România"
+                    },
+                    "value": 1,
+                    "type": "steelblue",
+                    "icon": "https://user-images.githubusercontent.com/3151700/69676149-14e75600-1098-11ea-8c27-5e90c7d871c6.png",
+                    "level": "green",
+                    "children": [
+                        {
+                            "name": 5,
+                            "properties": {
+                                "case_no": 5,
+                                "source_no": 4,
+                                "status": "Vindecat",
+                                "diagnostic_date": "04-03-2020",
+                                "healing_date": "07-03-2020",
+                                "death_date": null,
+                                "gender": "Bărbat",
+                                "age": 16,
+                                "county": "TIMIȘ",
+                                "uat": "TIMIȘOARA",
+                                "reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+                                "healed_reference": "https://www.news.ro/social/doi-pacienti-internati-cu-coronavirus-in-timisoara-s-au-vindecat-si-vor-fi-externati-1922401210172020032019298449",
+                                "symptoms": "Nu",
+                                "other_info": "Nepot Cazul Avion Italia",
+                                "country_of_infection": "România"
+                            },
+                            "value": 5,
+                            "type": "steelblue",
+                            "icon": "https://user-images.githubusercontent.com/3151700/69676632-0baab900-1099-11ea-9304-4c18a1097a0c.png",
+                            "level": "orange"
+                        },
+                        {
+                            "name": 6,
+                            "properties": {
+                                "case_no": 6,
+                                "source_no": null,
+                                "status": "Confirmat",
+                                "diagnostic_date": "04-03-2020",
+                                "healing_date": null,
+                                "death_date": null,
+                                "gender": "Bărbat",
+                                "age": 71,
+                                "county": "SUCEAVA",
+                                "uat": null,
+                                "reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+                                "healed_reference": null,
+                                "symptoms": "Nu",
+                                "other_info": null,
+                                "country_of_infection": null
+                            },
+                            "value": 6,
+                            "type": "steelblue",
+                            "icon": "https://user-images.githubusercontent.com/3151700/69676632-0baab900-1099-11ea-9304-4c18a1097a0c.png",
+                            "level": "orange"
+                        }
+                    ]
+                },
+                {
+                    "name": 2,
+                    "properties": {
+                        "case_no": 2,
+                        "source_no": null,
+                        "status": "Vindecat",
+                        "diagnostic_date": "28-02-2020",
+                        "healing_date": "05-03-2020",
+                        "death_date": null,
+                        "gender": "Femeie",
+                        "age": 38,
+                        "county": "TIMIȘ",
+                        "uat": "TIMIȘOARA",
+                        "reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+                        "healed_reference": "https://www.news.ro/social/update-primii-doi-pacienti-infectati-coronavirus-timisoara-au-externati-spital-nivel-national-afla-carantina-22-persoane-12-619-persoane-fiind-dispusa-masura-izolarii-domiciliu-1922403106002020031619293923",
+                        "symptoms": "Nu",
+                        "other_info": "Cazul Avion Italia",
+                        "country_of_infection": "Italia"
+                    },
+                    "value": 2,
+                    "type": "steelblue",
+                    "icon": "https://user-images.githubusercontent.com/3151700/69676632-0baab900-1099-11ea-9304-4c18a1097a0c.png",
+                    "level": "orange"
+                }
+            ]
+        },
+        {
+            "name": "Israel",
+            "value": 10,
+            "type": "grey",
+            "icon": "https://user-images.githubusercontent.com/3151700/69676637-0fd6d680-1099-11ea-85ab-2a9e68229328.png",
+            "level": "red",
+            "children": [
+                {
+                    "name": 3,
+                    "properties": {
+                        "case_no": 3,
+                        "source_no": null,
+                        "status": "Confirmat",
+                        "diagnostic_date": "28-02-2020",
+                        "healing_date": null,
+                        "death_date": null,
+                        "gender": "Bărbat",
+                        "age": 45,
+                        "county": "MARAMUREȘ",
+                        "uat": null,
+                        "reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+                        "healed_reference": null,
+                        "symptoms": "Nu",
+                        "other_info": null,
+                        "country_of_infection": null
+                    },
+                    "value": 3,
+                    "type": "steelblue",
+                    "icon": "https://user-images.githubusercontent.com/3151700/69676149-14e75600-1098-11ea-8c27-5e90c7d871c6.png",
+                    "level": "green"
+                },
+                {
+                    "name": 4,
+                    "properties": {
+                        "case_no": 4,
+                        "source_no": 2,
+                        "status": "Vindecat",
+                        "diagnostic_date": "03-03-2020",
+                        "healing_date": "05-03-2020",
+                        "death_date": null,
+                        "gender": "Bărbat",
+                        "age": 47,
+                        "county": "TIMIȘ",
+                        "uat": "TIMIȘOARA",
+                        "reference": "https://www.hotnews.ro/stiri-esential-23706145-cotonavirusul-romania-unde-fost-confirmate-9-cazuri-16-persoane-carantina-alte-aproape-13-000-sunt-izolate-domiciliu.htm",
+                        "healed_reference": "https://www.news.ro/social/update-primii-doi-pacienti-infectati-coronavirus-timisoara-au-externati-spital-nivel-national-afla-carantina-22-persoane-12-619-persoane-fiind-dispusa-masura-izolarii-domiciliu-1922403106002020031619293923",
+                        "symptoms": "Nu",
+                        "other_info": "Cazul Avion Italia",
+                        "country_of_infection": "Avion"
+                    },
+                    "value": 4,
+                    "type": "steelblue",
+                    "icon": "https://user-images.githubusercontent.com/3151700/69676149-14e75600-1098-11ea-8c27-5e90c7d871c6.png",
+                    "level": "green"
+                }
+            ]
+        },
+        {
+            "name": "Franța",
+            "value": 10,
+            "type": "grey",
+            "icon": "https://user-images.githubusercontent.com/3151700/69676637-0fd6d680-1099-11ea-85ab-2a9e68229328.png",
+            "level": "red",
+            "children": [
+                {
+                    "name": 8,
+                    "properties": {
+                        "case_no": 8,
+                        "source_no": null,
+                        "status": "Confirmat",
+                        "diagnostic_date": "06-03-2020",
+                        "healing_date": null,
+                        "death_date": null,
+                        "gender": "Bărbat",
+                        "age": 51,
+                        "county": "OLT",
+                        "uat": null,
+                        "reference": "https://www.hotnews.ro/stiri-sanatate-23704639-8-lea-caz-infectie-coronavirus-confirmat-romania-femeie-51-ani-din-olt-care-intors-din-italia.htm",
+                        "healed_reference": null,
+                        "symptoms": "Nu",
+                        "other_info": null,
+                        "country_of_infection": "Italia"
+                    },
+                    "value": 8,
+                    "type": "steelblue",
+                    "icon": "https://user-images.githubusercontent.com/3151700/69676632-0baab900-1099-11ea-9304-4c18a1097a0c.png",
+                    "level": "orange"
+                },
+                {
+                    "name": 11,
+                    "properties": {
+                        "case_no": 11,
+                        "source_no": 4,
+                        "status": "Vindecat",
+                        "diagnostic_date": "07-03-2020",
+                        "healing_date": "09-03-2020",
+                        "death_date": null,
+                        "gender": "Femeie",
+                        "age": 15,
+                        "county": "TIMIȘ",
+                        "uat": "TIMIȘOARA",
+                        "reference": "https://www.hotnews.ro/stiri-esential-23706416-alte-doua-cazuri-coronavirus-confirmate-romania-bilantul-ajunge-11.htm",
+                        "healed_reference": null,
+                        "symptoms": "Nu",
+                        "other_info": "Colega de școală cu pacientul din cazul avion Timișoara",
+                        "country_of_infection": "România"
+                    },
+                    "value": 11,
+                    "type": "steelblue",
+                    "icon": "https://user-images.githubusercontent.com/3151700/69676632-0baab900-1099-11ea-9304-4c18a1097a0c.png",
+                    "level": "orange"
+                },
+                {
+                    "name": 12,
+                    "properties": {
+                        "case_no": 12,
+                        "source_no": null,
+                        "status": "Confirmat",
+                        "diagnostic_date": "07-03-2020",
+                        "healing_date": null,
+                        "death_date": null,
+                        "gender": "Bărbat",
+                        "age": 49,
+                        "county": "BUCUREȘTI",
+                        "uat": "BUCUREȘTI",
+                        "reference": "https://www.hotnews.ro/stiri-esential-23706648-primul-caz-coronavirus-confirmat-bucuresti-este-12-lea-nivel-national.htm",
+                        "healed_reference": null,
+                        "symptoms": "Nu",
+                        "other_info": null,
+                        "country_of_infection": "Italia"
+                    },
+                    "value": 12,
+                    "type": "steelblue",
+                    "icon": "https://user-images.githubusercontent.com/3151700/69676632-0baab900-1099-11ea-9304-4c18a1097a0c.png",
+                    "level": "orange"
+                }
+            ]
+        },
+        {
+            "name": "Polonia",
+            "value": 10,
+            "type": "grey",
+            "icon": "https://user-images.githubusercontent.com/3151700/69676637-0fd6d680-1099-11ea-85ab-2a9e68229328.png",
+            "level": "red",
+            "children": [
+                {
+                    "name": 9,
+                    "properties": {
+                        "case_no": 9,
+                        "source_no": null,
+                        "status": "Confirmat",
+                        "diagnostic_date": "06-03-2020",
+                        "healing_date": null,
+                        "death_date": null,
+                        "gender": "Bărbat",
+                        "age": 40,
+                        "county": "HUNEDOARA",
+                        "uat": null,
+                        "reference": "http://stiri.tvr.ro/al-noualea-caz-de-coronavirus--confirmat-in-hunedoara--pacientul-este-un-barbat-care-s-a-intors-din-bergamo_857275.html#view",
+                        "healed_reference": null,
+                        "symptoms": "Nu",
+                        "other_info": "Cazul avion Bergamo",
+                        "country_of_infection": null
+                    },
+                    "value": 9,
+                    "type": "steelblue",
+                    "icon": "https://user-images.githubusercontent.com/3151700/69676632-0baab900-1099-11ea-9304-4c18a1097a0c.png",
+                    "level": "orange"
+                },
+                {
+                    "name": 10,
+                    "properties": {
+                        "case_no": 10,
+                        "source_no": 9,
+                        "status": "Confirmat",
+                        "diagnostic_date": "07-03-2020",
+                        "healing_date": null,
+                        "death_date": null,
+                        "gender": "Femeie",
+                        "age": 16,
+                        "county": "HUNEDOARA",
+                        "uat": null,
+                        "reference": "https://www.hotnews.ro/stiri-esential-23706416-alte-doua-cazuri-coronavirus-confirmate-romania-bilantul-ajunge-11.htm",
+                        "healed_reference": null,
+                        "symptoms": "Nu",
+                        "other_info": "Cazul avion Bergamo",
+                        "country_of_infection": "Italia"
+                    },
+                    "value": 10,
+                    "type": "steelblue",
+                    "icon": "https://user-images.githubusercontent.com/3151700/69676632-0baab900-1099-11ea-9304-4c18a1097a0c.png",
+                    "level": "orange"
+                }
+            ]
+        }
+    ]
+}
