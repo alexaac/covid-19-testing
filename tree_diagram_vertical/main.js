@@ -5,27 +5,26 @@ var margin = {top: 20, right: 90, bottom: 30, left: 90},
     width = 960 - margin.left - margin.right,
     height = 500 - margin.top - margin.bottom;
 
-// declares a tree layout and assigns the size
-var treemap = d3.tree()
-  .size([height, width]);
+const cluster = d3.cluster()
+    .size([width - 160, height]);
 
 (() => {
     // Get the data
     d3.json("tree_data.json").then(function(data) {
         
-        const treeData = data;
+        const root = d3.hierarchy(data);
 
-        changeView(treeData);
+        changeView(root);
     });
 
-    const changeView = (treeData) => {
-        //  assigns the data to a hierarchy using parent-child relationships
-        var nodes = d3.hierarchy(treeData, function(d) {
-            return d.children;
-        });
+    const changeView = (root) => {
 
-        // maps the node data to the tree layout
-        nodes = treemap(nodes);
+        cluster(root);
+
+        function elbow (d) {
+            return "M" + d.source.x + "," + d.source.y
+                + "H" + d.target.x + "V" + d.target.y;
+        };
 
         // append the svg object to the body of the page
         // appends a 'group' element to 'svg'
@@ -39,25 +38,20 @@ var treemap = d3.tree()
 
         // adds the links between the nodes
         var link = g.selectAll(".link")
-            .data( nodes.descendants().slice(1))
+            .data(root.links())
             .enter().append("path")
                 .attr("class", "link")
-                .attr("d", function(d) {
-                    return "M" + d.y + "," + d.x
-                    + "C" + (d.y + d.parent.y) / 2 + "," + d.x
-                    + " " + (d.y + d.parent.y) / 2 + "," + d.parent.x
-                    + " " + d.parent.y + "," + d.parent.x;
-                    });
+                .attr("d", elbow);
 
         // adds each node as a group
         var node = g.selectAll(".node")
-            .data(nodes.descendants())
+            .data(root.descendants())
             .enter().append("g")
             .attr("class", function(d) { 
                 return "node" + 
                 (d.children ? " node--internal" : " node--leaf"); })
             .attr("transform", function(d) { 
-                return "translate(" + d.y + "," + d.x + ")"; });
+                return "translate(" + d.x + "," + d.y + ")"; });
 
         // adds circles as nodes
         node.append("circle")
