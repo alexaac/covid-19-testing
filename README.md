@@ -1,9 +1,15 @@
-# covid-19-ro
+# COVID-19 maps and charts for Romania
 
-COVID-19 maps and charts for Romania - Testing
+Testing Cases Relations
 
-[Cases relations - tree diagram with pics test](https://alexaac.github.io/covid-19-testing/tree_diagram_with_pics)
 
-[Cases relations - simple tree diagram test](https://alexaac.github.io/covid-19-testing/tree_diagram)
+[Tree diagram with pics test](https://alexaac.github.io/covid-19-testing/tree_diagram_with_pics)
 
-[Cases relations - vertical dendogram test](https://alexaac.github.io/covid-19-testing/tree_diagram_vertical)
+[Simple tree diagram test](https://alexaac.github.io/covid-19-testing/tree_diagram)
+
+[Vertical dendogram test](https://alexaac.github.io/covid-19-testing/tree_diagram_vertical)
+
+[Relations Original](https://alexaac.github.io/covid-19-testing/covid-19-relations-orig)
+[Relations Plus Country](https://alexaac.github.io/covid-19-testing/covid-19-relations)
+[Relations Groupeed bY Country - Arc](https://alexaac.github.io/covid-19-testing/covid-19-relations-grouped)
+[Relations Groupeed bY Country - Line](https://alexaac.github.io/covid-19-testing/covid-19-relations-grouped-line)
