@@ -14,6 +14,6 @@ Testing Cases Relations
 
 [Relations Plus Country](https://alexaac.github.io/covid-19-testing/covid-19-relations)
 
-[Relations Groupeed by Country - Arc](https://alexaac.github.io/covid-19-testing/covid-19-relations-grouped)
+[Relations Grouped by Country - Arc](https://alexaac.github.io/covid-19-testing/covid-19-relations-grouped)
 
-[Relations Groupeed by Country - Line](https://alexaac.github.io/covid-19-testing/covid-19-relations-grouped-line)
+[Relations Grouped by Country - Line](https://alexaac.github.io/covid-19-testing/covid-19-relations-grouped-line)
