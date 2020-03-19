@@ -282,10 +282,10 @@ const linkArc = d => {
             d3.select("#nRadius").property("value", nRadius);
 
             // highlight case
-            // d3.selectAll("circle")
-            //     .attr("r", 8);
-            // d3.selectAll(".CO-" + nRadius)
-            //     .attr("r", 15);
+            d3.selectAll("circle")
+                .attr("r", 8);
+            d3.selectAll(".CO-" + nRadius)
+                .attr("r", 15);
         }
 
         // when the input range changes highlight the circle
