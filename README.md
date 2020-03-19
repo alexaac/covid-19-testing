@@ -17,3 +17,11 @@ Testing Cases Relations
 [Relations Grouped by Country - Arc](https://alexaac.github.io/covid-19-testing/covid-19-relations-grouped)
 
 [Relations Grouped by Country - Line](https://alexaac.github.io/covid-19-testing/covid-19-relations-grouped-line)
+
+Switch between case and country
+
+[Relations Switch Cases/Country](https://alexaac.github.io/covid-19-testing/covid-19-relations-switch)
+
+[Relations Switch Cases/Country Blue](https://alexaac.github.io/covid-19-testing/covid-19-relations-switch-blue)
+
+
