@@ -88,24 +88,6 @@ const linkArc = d => {
     `;
 };
 
-// updateR the slider
-const updateRadius = (nRadius) => {
-
-    // adjust the text on the range slider
-    d3.select("#nRadius-value").text(nRadius);
-    d3.select("#nRadius").property("value", nRadius);
-
-    // highlight case
-    d3.selectAll("circle")
-        .attr("stroke-width", "1.5px")
-        .attr("r", 8)
-        .attr("fill-opacity", 1);
-    d3.selectAll(".CO-" + nRadius)
-        .attr("r", 15)
-        .attr("stroke-width", "10px")
-        .attr("fill-opacity", 0.1);
-}
-
 (() => {
 
     // d3.json("cases_relations.json").then( data => { // dummy data
@@ -124,22 +106,22 @@ const updateRadius = (nRadius) => {
 
         // https://observablehq.com/d/cedc594061a988c6
         graph1.nodes = nodes.concat(Array.from(new Set(sources.map(d => d.properties.country_of_infection)), name => ({name})));
-        graph1.links = links.concat(sources.map(d => ({source: d.name, target: d.properties.country_of_infection})));
+        graph1.links = links.concat(sources.map(d => ({target: d.name, source: d.properties.country_of_infection})));
 
         // show spinner when changing view from round 1 to 2 and vice versa
         d3.select("#switch-data")
-            .on("click", function(){console.log('----')
+            .on("click", function(){
                 var button = d3.select(this);
-                if (button.text() === "Grupează după țară"){
-                    changeView(graph1);
-                    button.text("Resetează");
-                } else {
+                if (button.text() === "Simplifică"){
                     changeView(graph);
-                    button.text("Grupează după țară");
+                    button.text("Grupează pe țări");
+                } else {
+                    changeView(graph1);
+                    button.text("Simplifică");
                 };
             })
 
-        changeView(graph);
+        changeView(graph1);
     });
 
     const changeView = (graph) => {
@@ -178,8 +160,8 @@ const updateRadius = (nRadius) => {
                 return name;
             }))
             .force("charge", d3.forceManyBody()
-                                .strength(-100)
-                                .distanceMax(1100))
+                                .strength(-80)
+                                .distanceMax(1000))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .force('collision', d3.forceCollide().radius( d => {
                 return d.radius
@@ -211,6 +193,7 @@ const updateRadius = (nRadius) => {
                 .join("path")
                     .attr("stroke", d => "#999")
                     .attr("marker-end", d => `url(${new URL(`#arrow-${d.type}`, location.toString())})`);
+        link.exit().remove();
 
         const node = svg.append("g")
             .attr("stroke-linecap", "round")
@@ -219,7 +202,7 @@ const updateRadius = (nRadius) => {
             .data(nodes)
             .join("g")
                 .call(drag(simulation));
-        
+
         node.append("circle")
             .attr("class", d => d.properties && `CO-${d.properties.case_no}`)
             .attr("stroke", "white")
@@ -233,28 +216,77 @@ const updateRadius = (nRadius) => {
                         : d.properties ? color(d.properties.county) : "black");
             })
             .attr("stroke", d => { return d.properties && d.properties.status === "Vindecat" ? 'green' : '#333'; })
-            .on("mouseenter", d => highlight(d));
-            // .on("mouseleave", (d) => { unHighlight(); });
+            .on("mouseenter", d => highlight(d))
+            .on("mouseover", fade(.2))
+            .on("mouseout", fade(1));
             
         node.append("text")
-                .attr("x", 8)
-                .attr("y", "0.31em")
-                .text(d => {
-                    return d.is_country_of_infection ? d.country_name : ("#" + d.name);
-                })
-                .clone(true).lower()
-                .attr("fill", "none")
-                .attr("stroke", "white")
-                .attr("stroke-width", 3);
-
+            .attr("x", 8)
+            .attr("y", "0.31em")
+            .text(d => {
+                return d.is_country_of_infection ? d.country_name : ("#" + d.name);
+            })
+            .clone(true).lower()
+            .attr("fill", "none")
+            .attr("stroke", "white")
+            .attr("stroke-width", 3);
+        node.exit().remove();
+        
         simulation.on("tick", () => {
             link.attr("d", linkArc);
             node.attr("transform", d => `translate(${d.x},${d.y})`);
         });
-        
+
+        // https://bl.ocks.org/martinjc/5e73d17699573ccd7c2d4468d61dce17/8c047553db6e8627553165ee283cfd525416605c
+        // build a dictionary of nodes that are linked
+        var linkedByIndex = {};
+        links.forEach(function(d) {
+            linkedByIndex[d.source.index + "," + d.target.index] = 1;
+        });
+
+        // check the dictionary to see if nodes are linked
+        function isConnected(a, b) {
+            return linkedByIndex[a.index + "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index == b.index;
+        }
+
+        // fade nodes on hover
+        function fade(opacity) {
+            return function(d) {
+                // check all other nodes to see if they're connected
+                // to this one. if so, keep the opacity at 1, otherwise
+                // fade
+                node.style("stroke-opacity", function(o) {
+                    thisOpacity = isConnected(d, o) ? 1 : opacity;
+                    return thisOpacity;
+                });
+                node.style("fill-opacity", function(o) {
+                    thisOpacity = isConnected(d, o) ? 1 : opacity;
+                    return thisOpacity;
+                });
+                // also style link accordingly
+                link.style("stroke-opacity", function(o) {
+                    return o.source === d || o.target === d ? 1 : opacity;
+                });
+            };
+        }
+
         // Case slider
         // https://bl.ocks.org/d3noob/c4b31a539304c29767a56c2373eeed79/9d18fc47e580d8c940ffffea1179e77e62647e36
         d3.select("#nRadius").property("max", d3.max(cases));
+
+        // updateR the slider
+        const updateRadius = (nRadius) => {
+
+            // adjust the text on the range slider
+            d3.select("#nRadius-value").text(nRadius);
+            d3.select("#nRadius").property("value", nRadius);
+
+            // highlight case
+            // d3.selectAll("circle")
+            //     .attr("r", 8);
+            // d3.selectAll(".CO-" + nRadius)
+            //     .attr("r", 15);
+        }
 
         // when the input range changes highlight the circle
         d3.select("#nRadius").on("input", function() {
