@@ -20,7 +20,7 @@ Testing Cases Relations
 
 Switch between case and country
 
-[Relations Switch Cases/Country](https://alexaac.github.io/covid-19-testing/covid-19-relations-switch)
+[Relations Switch Cases/Country Colorful](https://alexaac.github.io/covid-19-testing/covid-19-relations-switch)
 
 [Relations Switch Cases/Country Blue](https://alexaac.github.io/covid-19-testing/covid-19-relations-switch-blue)
 
