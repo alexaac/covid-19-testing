@@ -15,7 +15,7 @@ body {
 :root {
     --main-confirmate:#63ace7 ;
     --main-recuperari: #00ffff;
-    --main-decese: #b2beb5;
+    --main-decese: #f3eaea;
 }
 
 .wrapper {
@@ -26,9 +26,9 @@ body {
 svg.chart-group {
     width: 90%;
     height: 90%;
+    margin-left: 50px;
+    margin-right: 50px;
     max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .link {

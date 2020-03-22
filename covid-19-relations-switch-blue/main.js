@@ -137,11 +137,12 @@ const linkArc = d => {
             .attr("width", svg_width)
             .attr("height", svg_height)
             .attr("viewBox", '0, 0 ' + svg_width + ' ' + svg_height)
-            .on("click", () => { unHighlight(); })
-                .append("g")
-                    .attr("transform",
-                    "translate(" + margin.left + "," + margin.top + ")");
-                
+            .on("click", () => { unHighlight(); });
+
+        var g = svg.append("g")
+            .attr("transform",
+            "translate(" + margin.left + "," + margin.top + ")");
+
         const types = Array.from(new Set(graph.nodes
             .filter(d => d.is_country_of_infection !== 1)
             .map(d => d.source)));
@@ -153,9 +154,7 @@ const linkArc = d => {
                 ? "var(--main-confirmate)"
                 :  status === "Vindecat"
                     ? "var(--main-recuperari"
-                    : status === "Decedat"
-                        ? "var(--main-decese)"
-                        : "#333";
+                    : "var(--main-decese)";
         };
 
         // graph.nodes.shift();
@@ -168,7 +167,7 @@ const linkArc = d => {
                 return name;
             }))
             .force("charge", d3.forceManyBody()
-                                .strength(-60)
+                                .strength(-50)
                                 .distanceMax(900))
             .force("center", d3.forceCenter(width / 2, height / 2))
             .force('collision', d3.forceCollide().radius( d => {
@@ -177,8 +176,17 @@ const linkArc = d => {
             .force("x", d3.forceX())
             .force("y", d3.forceY());
 
+        var zoom_handler = d3.zoom()
+            .on("zoom", zoom_actions);
+
+        zoom_handler(svg);
+
+        function zoom_actions(){
+            g.attr("transform", d3.event.transform)
+        }
+
         // Per-type markers, as they don't inherit styles.
-        svg.append("defs").selectAll("marker")
+        g.append("defs").selectAll("marker")
         .data(types)
                 .join("marker")
                     .attr("id", d => `arrow-${d}`)
@@ -193,7 +201,7 @@ const linkArc = d => {
                     .attr("fill", "#999")
                     .attr("d", "M0,-5L10,0L0,5");
         
-        const link = svg.append("g")
+        const link = g.append("g")
                 .attr("fill", "none")
                 .attr("stroke-width", 1.5)
                 .selectAll("path")
@@ -203,7 +211,7 @@ const linkArc = d => {
                     .attr("marker-end", d => `url(${new URL(`#arrow-${d.type}`, location.toString())})`);
         link.exit().remove();
 
-        const node = svg.append("g")
+        const node = g.append("g")
             .attr("stroke-linecap", "round")
             .attr("stroke-linejoin", "round")
             .selectAll("g")
@@ -219,16 +227,15 @@ const linkArc = d => {
             .attr("fill", d => {
                 return (d.is_country_of_infection)
                     ? "black"
-                    : (d.properties && d.parent 
-                        ? color(d.parent.properties.status) 
+                    : (d.properties && d.parent
+                        ? color(d.parent.properties.status)
                         : d.properties ? color(d.properties.status) : "black");
             })
             .attr("stroke", d => "#333")
-            .on("mouseenter", d => highlight(d))
-            .on("mouseover", fade(.2))
-            .on("mouseout", fade(1));
-        
-        
+            .on("touchend mouseenter", d => highlight(d))
+            .on("touchend mouseover", fade(.2))
+            .on("touchend mouseout", fade(1));
+
         node.append("text")
             .attr("x", 8)
             .attr("y", "0.31em")
@@ -240,7 +247,7 @@ const linkArc = d => {
             .attr("stroke", "white")
             .attr("stroke-width", 3);
         node.exit().remove();
-        
+
         simulation.on("tick", () => {
             link.attr("d", linkArc);
             node.attr("transform", d => `translate(${d.x},${d.y})`);
