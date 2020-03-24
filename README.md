@@ -24,4 +24,8 @@ Switch between Case and Case+Country
 
 [Relations Switch Cases/Country Blue](https://alexaac.github.io/covid-19-testing/covid-19-relations-switch-blue)
 
+County Statistics
+
+[Cases per county](https://alexaac.github.io/covid-19-testing/treemap)
+
 
