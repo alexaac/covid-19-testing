@@ -124,6 +124,14 @@ const unHighlight = () => {
                 .attr("fill-opacity", (d, i, nodes) => i === nodes.length - 1 ? 0.7 : null)
                 .text(d => d);
 
+        /******************************** Title ********************************/
+        svg.append("text")
+            .attr("x", (width / 2))
+            .attr("y", -15)
+            .attr("text-anchor", "middle")
+            .style("font-size", "16px")
+            .style("text-decoration", "underline")
+            .text("Repartiția cazurilor pe județe");
     };
 
 }).call(this);

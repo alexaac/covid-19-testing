@@ -56,9 +56,9 @@ tooltip_div.tooltip {
     opacity: .9;
     color: #222;
     padding: 10px;
-    min-width: 16.75vmin;
+    min-width: 10.75vmin;
     font-size: 0.7em;
-    line-height: 24pt;
+    line-height: 20pt;
     font-family:  "EB Garamond", serif;
     visibility: visible;
     pointer-events: none;
